@@ -4,7 +4,7 @@
 
 url: http://erma928.github.io
 title: "冯继敏"
-subtitle: "用理想碰撞现实"
+subtitle: "理想撞击现实"
 author: "冯继敏"
 simple_search: http://google.com/search
 description:
@@ -13,7 +13,7 @@ description:
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
-date_format: "ordinal"
+date_format: "%Y-%m-%d"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
@@ -54,7 +54,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
-# blog_index_asides:
+# blog_index_asides: [custom/asides/about.html]
 # post_asides:
 # page_asides:
 
