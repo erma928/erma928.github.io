@@ -1,11 +1,11 @@
-# ----------------------- #
+﻿# ----------------------- #
 #      Main Configs       #
 # ----------------------- #
 
 url: http://erma928.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: "冯继敏"
+subtitle: "用理想碰撞现实"
+author: "冯继敏"
 simple_search: http://google.com/search
 description:
 
