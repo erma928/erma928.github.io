@@ -1,185 +1,183 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-$white: #FFFFFF;
+@font-face {
+	  font-family: "League";
+	    src: url('/font/LeagueGothic.otf');
+    }
 
-html {
-	background: $white;
-}
+    a:visited, #content .blog-index article h1 a:hover { color: #1863A1; }
 
-body {
-	font-family: $sans !important;
-	font-size: 1em;
-	max-width: 850px;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
 
-	> header {
-		background: $white;
-		text-align: center;
-		padding-left: 0px;
-		padding-right: 0px;	
+    /* ----- main layout ----- */
 
-		h1 {
-			a, a:visited, a:hover {
-				color: #8C8C8C;
-				font-family: $heading-font-family;
-			}
-		}
+
+    html { background: #262C33 url("../images/background.png"); }
+
+    body { font-size: 1em; }
+
+    body > div { background-image: none; }
+
+    body > div > div { background-image: none; }
+
+
+    /* ----- header ----- */
+
+
+    body > header{
+	      background: none;
+	        /*padding: 1.6em 0 1em 0*/
+	        padding: 0.5em 0 0.5em 0
 	}
 
-	> nav {
-		background: $white;
-		border-bottom: 1px solid #F2F2F2;
-		padding-left: 0px;
-		padding-right: 0px;
+	body > header h1{
+	  font-size: 2.8em;
+	    padding-left: 20px;
+	      text-shadow: rgba(0, 0, 0, 0.8) 0 0 8px;
+	      }
 
-		form .search {
-			border-radius: 0.2em 0.2em 0.2em 0.2em;
-			box-shadow: none;
-			border: 0px;
-			padding-top: 0.3em;
-			padding-bottom: 0.3em;
-			padding-left: 0.5em;
-			padding-right: 0.5em;
-		}
+	      body > header h2{
+	        font-size: 0.5em;
+	  letter-spacing: 1px;
+	    margin-top: -1.4em;
+	      padding-left: 20px;
+	      }
 
-		a {
-			font-family: $sans;
-			font-size: 0.9em;
-			padding-top: 0.3em;
-			line-height: 1.5em;
-		}
+	      body > nav {
+	        padding-top: .15em;
+	  padding-bottom: .15em;
+	  }
 
-		li + li {
-			border-left: 0px;
+	  body > nav a{
+	    font-size: 1em;
+	      line-height: 1.4em;
+	      }
 
-			a {
-				border-left: 0px;
-			}
-		}
+	      body > nav form .search{
+	        padding: .2em .3em;
 	}
 
-	> div {
-		background: $white;
-		border-bottom: 0px;
 
-		> div {
-			background: $white;
-			border-right-width: 0px;
-		}
+	/* ----- Content ----- */
+
+
+	#content .blog-index article h1 {
+	  font-size: 1.8em;
+	    font-weight: normal;
+	    }
+
+	    #content .blog-index article h1, #content .blog-index article h1 a, article header h1, article header h1 a{
+	      color: #555555 !important;
+	      }
+
+	      h1 { font-size: 1.8em; }
+
+	      h1 span{
+	        font-weight: normal;
+	  color: #E0841B;
+	  }
+
+	  article h2, article h3, article header h1{
+	    font-weight: normal;
+	    }
+
+	    .blog-index article h1 a:hover{ text-decoration: none; }
+
+	    article p {
+	      text-align:justify;
+	        margin-bottom: 1em;
 	}
 
-	> footer {
-		background: $white;
-		text-shadow: none;
-		color: #AAAAAA;
-	  	padding-left: 0;
-	  	padding-right: 0;
-		border-top: 0px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
 
-	#content {
-		> article {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
+	/* ----- Sidebar ----- */
 
-		> div {
-			> article, > section {
-				padding-left: 0px;
-				padding-right: 0px;
-			}	
-		}
-	}
-}
 
-article {
-	padding-top: 2em;
+	aside.sidebar section h1 { letter-spacing: 0.1em; }
 
-	.entry-content {
-		h3 {
-			font-style: italic
-		}
-	}
+	aside.sidebar a { text-decoration: none; }
 
-	ul, ol {
-		margin-left: 2em;
-	}
+	.toggle-sidebar{display: none;}
 
-	a, a:visited {
-		color: #1863A1;
-	}
+	ul#gh_repos > li > a{
+	  display: block;
+	    font-weight: bold;
+	      margin-bottom: 0.4em;
+	      }
 
-	header {
-		h1.entry-title {
-			font-family: $heading-font-family;
-			font-weight: 400;
-		}
-	}
-}
+	      aside.sidebar{
+	        -moz-border-radius-topright: 0.4em;
+	  -webkit-border-radius: 0 0.4em 0 0;
+	    border-radius: 0 0.4em 0 0;
+	    }
 
-#content {
-	div.pagination {
-		background: none repeat scroll 0 0 transparent;
-		margin: 0 10px;  
-		font-size: 0.95em;
-		padding-bottom: 1.5em;
-		margin-top: 4em;
-		position: relative;
-		text-align: center;		
-		border-top: dotted 1px #D1D1D1;
-		border-bottom: dotted 1px #D1D1D1;
-	}
 
-	.blog-index {
-		article {
-			padding-top: 4em;
+	    /* ----- Footer ----- */
 
-			header {
-				padding-left: 0;
-  				padding-right: 0;
-			}
-		}
 
-		h1 {
-			a {
-				font-family: $heading-font-family;
-				font-weight: 400;
-			}
+	    body > footer{
+	      -moz-border-radius: 0;
+	        -webkit-border-radius: 0;
+	  border-radius:0;
+	    margin-bottom: 0;
+	    }
 
-			a:hover {
-				text-decoration: none;
-			}
-		}
-	}
 
-	.hentry {
-		h1.entry-title {
-			font-family: $heading-font-family;
-			font-weight: 400;
-			font-size: 2.2em;
-		}
-	}
-	
-}
+	    /* ----- 404 ----- */
 
-figure.code {
-	.highlight {
-		background: #212C3B !important;
 
-		.gutter {
-			display: none;
-		}
-	}
-}
+	    .notfound404 article{
+	      margin-left: 0 !important;
+	      }
 
-.pre-code, html .gist .gist-file .gist-syntax .highlight pre, .highlight code {
-	background: #212C3B !important;
-}
 
-aside {
-	display: none;
-}
+	      /* ----- Media queries ----- */
+
+
+	      @media only screen and (min-width: 550px) {
+
+	        body > header h1{
+	      background: url("/favicon.png") no-repeat 0 8px;
+	            padding-left: 60px;
+	      }
+
+	        body > header h2 { padding-left: 60px; }
+
+	  body > footer { margin-bottom: 3em; }
+	  }
+
+	  @media only screen and (min-width: 1040px) {
+
+	    body > nav {
+	        -moz-border-radius: 0.4em;
+	    -webkit-border-radius: 0.4em;
+	        border-radius:0.4em;
+	    margin-bottom: 2em;
+	      }
+
+	        body > footer{
+	      -moz-border-radius-bottomleft: 0.4em;
+	            -moz-border-radius-bottomright: 0.4em;
+	          -webkit-border-radius: 0 0 0.4em 0.4em;
+	        border-radius: 0 0 0.4em 0.4em;
+	  }
+
+	    #main{
+	          -moz-border-radius-topleft: 0.4em;
+	        -moz-border-radius-topright: 0.4em;
+	      -webkit-border-radius: 0.4em 0.4em 0 0;
+	            border-radius: 0.4em 0.4em 0 0;
+	      }
+
+	        #content{
+	      -moz-border-radius-topleft: 0.4em;
+	            -webkit-border-radius: 0.4em 0 0 0;
+	          border-radius: 0.4em 0 0 0;
+	    }
+
+	      #content .blog-index a[rel="full-article"]{
+	            -webkit-border-radius: 6px;
+	          -moz-border-radius: 6px;
+	        border-radius: 6px;
+	  }
+	  }
+
