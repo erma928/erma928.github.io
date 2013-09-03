@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[冯继敏]]></title>
+  <link href="http://erma928.github.io/atom.xml" rel="self"/>
+  <link href="http://erma928.github.io/"/>
+  <updated>2013-09-03T11:48:21+08:00</updated>
+  <id>http://erma928.github.io/</id>
+  <author>
+    <name><![CDATA[冯继敏]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[浅议应用开发]]></title>
+    <link href="http://erma928.github.io/blog/2013/09/02/an-engineers-view-of-application-development/"/>
+    <updated>2013-09-02T20:47:00+08:00</updated>
+    <id>http://erma928.github.io/blog/2013/09/02/an-engineers-view-of-application-development</id>
+    <content type="html"><![CDATA[<p>应用开发是左脑和右脑协作的结果。偏向一面的应用开发过程注定不会顺利，质量也不会如意。</p>
+]]></content>
+  </entry>
+  
+</feed>
