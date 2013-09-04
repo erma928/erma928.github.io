@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[冯继敏]]></title>
-  <link href="http://www.fengjimin.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: application | 冯继敏]]></title>
+  <link href="http://www.fengjimin.com/blog/categories/application/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
   <updated>2013-09-04T19:28:46+08:00</updated>
   <id>http://www.fengjimin.com/</id>
