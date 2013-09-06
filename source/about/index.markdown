@@ -17,7 +17,7 @@ footer: true
 * 1年 ESB, SOA 经验, 使用ServiceMix, Camel, ActiveMQ, CXF等Apache开源框架
 * 2年大型互联网公司工作经验，经历多个需求至维护的完整周期，使用前端后端的各项技术
 * 1年 Ruby on Rails 开发经验
-* 通晓 Ruby, 对Scala, Clojure等高级编程语言，对OOP, Functional Programming 兴趣浓厚
+* 通晓 Ruby, 对Scala, Clojure等高级编程语言和 OOP, Functional Programming 兴趣浓厚
 * 通晓 MySQL, PostGreSQL 等关系型数据库
 * 通晓 Linux, Mac 环境管理, 可使用 Shell Scripting
 * 通晓 HTML、CSS、Javascript, 可使用 jQuery, CoffeeScript, SASS
@@ -43,7 +43,16 @@ footer: true
   * **US IRS** -- 因应美国税局的征税需求的项目。负责的第一个部分是用批处理PayPal用户报税信息来向国税局查询状态再处理，使用了内部的GenericLoader batch框架。第二部分是负责一个处理用户compliance status change check的service operation。第三部分是负责前端的用户条件缺失需要做数据收集的web flow。以上工作让我大体理解PayPal的技术框架。
   * **Japan KYC** -- 因应PayPal进入日本政策需求的项目。负责的部分有进行用户手动审核的admin界面，使用后台服务的业务逻辑部分，以及后端用户地址审核的服务。
   * **Touchstone Limits** -- 负责POS项目的Limits需求。在已有的limits服务的基础上实现，还要保证速度。使用了一些静态和动态的profiling技术。
-  * **Canada KYC** -- 第一部分包括更为复杂的sending和receiving limits的需求。第二阶段负责写business rules, 使用business rules engine技术，另做了一个isolated release。这一项目使用了敏捷开发的一些practice, 比如每天站立会议，当面交流，早交流等，大大提高了效率。
+  * **Canada KYC** -- 第一部分包括更为复杂的sending和receiving limits的需求。第二阶段负责写business rules, 使用business rules engine技术，另做了一个isolated release。这一项目使用了敏捷开发的实践, 比如每天站立会议，当面交流，早交流等，大大提高了效率。
   * 得到十分有益的经验教训，体会到在一个复杂系统，复杂需求的环境下，有效沟通交流的重大意义。
-* 2013年，做为[Greenlife进出口公司](http://www.greenlifeonefamily.com)的contractor，为其开发定制accounting系统。使用 Ruby on Rails 框架。
+* 2013年，做为[Greenlife公司](http://www.greenlifeonefamily.com)的contractor，为其开发定制Accounting系统。使用 Ruby on Rails 框架。
+  * 直接面对客户，积极交流理解其实际需求，设计合理的网站架构。
+  * 方便得到用户反馈，促进实践敏捷开发。
+  * 对网站开发有了更清晰整体的理解把握。
+* 通过对以下技术理念的学习，回顾以往经验，对软件开发有了更深入理解。
+  * 高级语言如Ruby, Scala, Clojure以及相应技术;
+  * jQuery, CoffeeScript, SASS等；
+  * 开发理念原则。
+* _沉淀是为了更好的出发。_
+ 
 
