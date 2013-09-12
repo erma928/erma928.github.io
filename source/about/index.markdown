@@ -41,7 +41,7 @@ footer: true
   * 最值得追忆的是做QubeVu期间到Boston出差的一个月。
 * 2011－2013年初，加入 PayPal Singapore, 在 Compliance 项目部经历了多个需求至维护的完整周期，使用了PayPal前端后端的各项技术。
   * **A国报税** -- 负责的第一个部分是批处理PayPal用户报税状态查询，使用了内部的通用 batch 框架；第二部分负责更新用户 compliance 状态的 service operation；第三部分是负责前端的用户条件缺失需要做数据收集的 web flow。以上工作让我大体理解PayPal的技术框架。
-  * **J国 KYC** -- 负责的部分有进行用户手动审核的 admin 界面；调用后台服务的业务逻辑部分；以及后端用户地址审核的服务逻辑。
+  * **J国 KYC** -- 负责进行用户手动审核的 admin 界面；调用后台服务的业务逻辑部分；以及后端用户地址审核的服务逻辑。
   * **POS 限额** -- 实现 POS 相关的 limits service operation; 因要保证速度，使用了一些静态和动态的 profiling 技术。
   * **R国 KYC** -- 设计实现Daemon里由用户 financial instrument status 来推导 compliance status 的逻辑。
   * **C国 KYC** -- 第一阶段实现复杂的发送和接收限额的需求；第二阶段负责在 business rules engine 下写业务规则，实现 compliance level 对应逻辑。这一项目使用了敏捷开发的实践, 比如每天站立会议，当面交流，早交流等，很大地提高了效率。
