@@ -31,7 +31,7 @@ footer: true
 * 2001-2005年，在国大计算机学院学习计算机科学，以荣誉本科学位毕业。
 * 2005-2008年初，由于得到在学校做研究工作和读研的机会，转入 postgraduate 研究，主要领域在 Computer Vision, GPU, 和 Embedded Systems，期间发表 GPU 方向论文一篇。
 * 2008-2009年，加入 NCS Singapore, 开发一个企业本地用户、邮件服务转向云服务 (Google Apps) 的网络应用平台。
-  * 先后负责用户转移，单点登录 (SSO) 等部分，也负责集成了一个 SMS 群发功能到平台上的任务。使用 JSP, JMS, Google Apps API 等技术。
+  * 先后负责用户转移，单点登录 (SSO) 等部分，也负责了集成一个 SMS 群发功能到平台上的任务。使用 JSP, JMS, Google Apps API 等技术。
   * 通过这一项目得到了重要的经验教训，深刻理解了学校与业界的区别。印象比较深的是曾访问过 Google MTV 总部几天。
 * 2009年10月到2010年底，加入了一个邮政信息领域的小公司[Postea](http://www.postea.com/index.shtml)，期间负责了2个小项目和2个大项目。
   * 第一个小项目是用PHP写一个SVN用户权限管理工具。

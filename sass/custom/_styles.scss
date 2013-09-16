@@ -1,2 +1,18 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+.profilepic > img, #sub-nav .social > a {
+	transition: transform 1s;
+	-webkit-transition: -webkit-transform 1s; /* Safari */
+}
+
+.profilepic > img:hover {
+	transform:rotateY(180deg);
+	-ms-transform:rotateY(180deg); /* IE 9 */
+	-webkit-transform:rotateY(180deg); /* Safari and Chrome */
+}
+
+#sub-nav .social > a:hover {
+	transform:rotate(360deg);
+	-ms-transform:rotate(360deg); /* IE 9 */
+	-webkit-transform:rotate(360deg); /* Safari and Chrome */
+}
