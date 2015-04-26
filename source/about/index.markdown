@@ -61,6 +61,8 @@ footer: true
   * jQuery, JS modular框架；
   * NoSQL技术如 HBase, MongoDB
   * DRY, Orthogonal design；
+  * Domain Driven Design
+  * DSL
   * SCRUM 敏捷开发。
 * 实践加关联才能真正掌握
 * _沉淀是为了更好的出发，坚持才能到达目标。_
