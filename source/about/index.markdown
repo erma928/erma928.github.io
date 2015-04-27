@@ -19,7 +19,7 @@ footer: true
 * 通晓 Oracle/MySQL, MyBatis ORM框架
 * 通晓 HTML、CSS、Javascript, jQuery, AJAX
 * 通晓 Ruby on Rails 开发
-* 通晓 Linux, Mac 环境管理, 可使用 Shell Scripting
+* 熟悉 Linux, Mac 环境管理
 * 熟悉 Git, SVN 版本控制, Maven, GEM等包管理工具
 
 ## 经历
@@ -28,7 +28,7 @@ footer: true
 * 2001-2005年，在国大计算机学院学习计算机科学，以荣誉本科学位毕业。
 * 2005-2008年， 由于得到在学校做研究工作和读研的机会，转入 postgraduate 研究，主要领域在 Computer Vision, GPU, 和 Embedded Systems，期间发表过 GPU 方向论文一篇。
 * 2008-2009年，加入 NCS Singapore, 开发了一个帮助企业本地用户、邮件服务转向云服务(Google Apps) 的网络应用平台。
-  * 负责了用户目录与Google Apps同步功能；集成了SMS群发功能，使用了JSP, JMS, Google Apps API 等技术
+  * 负责了用户目录与Google Apps 的同步功能；集成了SMS群发功能，使用了JSP, JMS, Google Apps API 等技术
   * 通过这一项目得到了重要的经验教训，深刻理解了学校与业界的区别。印象比较深的是曾访问过 Google MTV 总部几天。
 * 2009年10月到2010年底，加入了一个邮政信息领域的小公司[Postea](http://www.postea.com/index.shtml)，期间负责了2个小项目和2个大项目。
   * 第一个小项目是用PHP写一个SVN用户权限管理工具。
@@ -37,7 +37,7 @@ footer: true
   * 第二个大项目是[PostMarque](http://www.postea.com/solutions/postmarque.shtml)，主要是使用 ESB 来集成邮政公司的各子系统比如在线挂号邮件系统到一个全新邮件跟踪系统，使用了 ServiceMix, Camel, ActiveMQ, Cxf 等开源框架。在短时间内得以上线。
   * 值得追忆的是做QubeVu期间到Boston出差的一个月。
 * 2011－2013年初，加入 PayPal Singapore, 在 Compliance 项目部经历了多个需求至维护的完整周期，使用了PayPal前端后端的各项技术。
-  * **A国报税** -- 负责的第一个部分是批处理PayPal用户报税状态查询，使用了内部的通用 batch 框架；第二部分负责更新用户 compliance 状态的 orchestration service operation；第三部分是负责前端的用户条件缺失需要做数据收集的 web flow。以上工作让我大体理解PayPal的技术框架。
+  * **US 报税** -- 负责的第一个部分是批处理PayPal用户报税状态查询，使用了内部的通用 batch 框架；第二部分负责更新用户 compliance 状态的 orchestration service operation；第三部分是负责前端的用户条件缺失需要做数据收集的 web flow。以上工作让我大体理解PayPal的技术框架。
   * **POS 限额** -- 实现 POS 相关的 limits service operation; 使用了一些静态和动态的 profiling 技术。
   * **KYC (Japan, RU, CA) ** -- 用户手动审核的 admin功能；后台服务非实时由用户 financial instrument status 来推导 compliance status 的逻辑；发送和接收限额的需求；
   * **Rules Engine** -- 使用iLOG规则引擎来实施用户资料更新规则处理 (BOM, XOM etc)
@@ -56,15 +56,15 @@ footer: true
   * 实践了项目管理、团队管理；参加过内部架构培训
 
 * 通过对以下技术理念的学习，回顾以往经验，对软件开发有了更深入理解。
-  * OOP, Design Patterns, IOC, AOP
+  * OOP, Design Patterns, IOC, AOP;
   * 高级语言如 Ruby, Scala, 函数式编程;
+  * NoSQL技术如 HBase, MongoDB;
   * jQuery, JS modular框架；
-  * NoSQL技术如 HBase, MongoDB
-  * DRY, Orthogonal design；
-  * Domain Driven Design
-  * DSL
+  * DRY, Orthogonal design;
+  * Domain Driven Design;
+  * DSL;
   * SCRUM 敏捷开发。
-* 实践加关联才能真正掌握
+* 实践加关联才能发现上帝的珍宝
 * _沉淀是为了更好的出发，坚持才能到达目标。_
  
 
