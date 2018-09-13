@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "妄谈软件开发"
+title: "浅谈软件开发"
 date: 2013-09-02 20:47
 comments: true
 categories: application programming
