@@ -4,7 +4,7 @@
   <title><![CDATA[Category: machine learning | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T16:36:22+08:00</updated>
+  <updated>2019-01-22T19:47:19+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -14,6 +14,390 @@
 
   
   <entry>
+    <title type="html"><![CDATA[python machine learning and text processing (2)]]></title>
+    <link href="http://www.fengjimin.com/blog/2019/01/22/python-machine-learning-and-text-processing-2/"/>
+    <updated>2019-01-22T16:44:00+08:00</updated>
+    <id>http://www.fengjimin.com/blog/2019/01/22/python-machine-learning-and-text-processing-2</id>
+    <content type="html"><![CDATA[<p>机器学习是个大课题，也是一种解决现实问题的思维方式。虽然单纯学习其算法不算太难，然而要有对解决实际问题的纯熟运用，却需要在理论与实践相结合方面下足功夫。python在这方面提供了足够便利的工具。</p>
+
+<!--more-->
+
+
+<h3>简介</h3>
+
+<ol>
+<li>监督学习
+
+<ol>
+<li>分类问题</li>
+<li>回归问题</li>
+</ol>
+</li>
+<li>非监督学习
+
+<ol>
+<li>聚类</li>
+<li>降维</li>
+</ol>
+</li>
+</ol>
+
+
+<h3>步骤</h3>
+
+<ol>
+<li>收集数据
+
+<ol>
+<li><a href="https://data.world/crowdflower/disasters-on-social-media">Disasters on Social Media</a> 数据集</li>
+</ol>
+</li>
+<li>数据清洗
+
+<ol>
+<li>去除不相关字符</li>
+<li>拆分独立单词</li>
+<li>去除不相关词语</li>
+<li>转换成小写</li>
+<li>多种拼法御特定表达绑定</li>
+<li>词型还原</li>
+</ol>
+</li>
+<li>特征提取
+
+<ol>
+<li>bag of words 词袋法
+
+<ol>
+<li><code>John is happy he is not hungary for apples. -&gt; [0,2,1,1,1,1,1,1,1]</code></li>
+<li>完全忽略单词顺序</li>
+</ol>
+</li>
+<li>one-hot
+
+<ol>
+<li><code>John is happy he is not hungary for apples. -&gt; [0,1,1,1,1,1,1,1,1]</code></li>
+</ol>
+</li>
+<li>TF-IDF
+
+<ol>
+<li><img src="http://www.ruanyifeng.com/blogimg/asset/201303/bg2013031504.png" alt="TF" /></li>
+<li><img src="http://www.ruanyifeng.com/blogimg/asset/201303/bg2013031506.png" alt="IDF" /></li>
+</ol>
+</li>
+<li>word2vec
+
+<ol>
+<li>使用浅层双层神经网络，映射每一个词到一个向量，使之能表达词语之间的相互关系，以及上下文的关系。如：<code>V(queen) - V(woman) + V(man) = V(king)</code></li>
+<li>训练算法
+
+<ol>
+<li>skip-grams: 由当前单词预测上下文</li>
+<li>CBOW: 由上下文预测当前单词</li>
+<li><img src="https://static.leiphone.com/uploads/new/article/740_740/201706/594b31d0920ef.png?imageMogr2/format/jpg/quality/90" alt="nn" /></li>
+<li><img src="https://static.leiphone.com/uploads/new/article/740_740/201706/594b3267c64f4.png?imageMogr2/format/jpg/quality/90" alt="weights" /> 中间300weights就是car单词的词向量</li>
+<li>句子嵌入的向量表示，可以采用将句子中词汇的word2vec平均化</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>分类
+
+<ol>
+<li>数据集划分为训练集和测试集</li>
+<li>分类算法：逻辑回归，SVM，贝叶斯公式，等等</li>
+</ol>
+</li>
+<li>检验效果
+
+<ol>
+<li>混淆矩阵</li>
+<li>precision, recall, f1_score..</li>
+</ol>
+</li>
+</ol>
+
+
+<h3>Scikit-learn库</h3>
+
+<ol>
+<li><p>算法包</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> 导入算法     </th>
+<th> 代码                                               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td> 广义线性模型 </td>
+<td> from sklearn.linear_model import LinearRegression  |</td>
+</tr>
+<tr>
+<td></td>
+<td> 逻辑回归     </td>
+<td> rom sklearn.linear_model import LogisticRegression |</td>
+</tr>
+<tr>
+<td></td>
+<td> 支持向量机   </td>
+<td> from sklearn.svm import SVC                        |</td>
+</tr>
+<tr>
+<td></td>
+<td> k近邻        </td>
+<td> from sklearn.neighbors import KNeighborsClassifier |</td>
+</tr>
+<tr>
+<td></td>
+<td> 决策树       </td>
+<td> from sklearn.tree import DecisionTreeClassifier    |</td>
+</tr>
+<tr>
+<td></td>
+<td> 朴素贝叶斯   </td>
+<td> from sklearn.naive_bayes import MultinomialNB      |</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>转换器（transformer）：用于数据预处理和数据转换</p>
+
+<ol>
+<li>transformer.fit</li>
+<li>transformer.transform</li>
+<li>transformer.fit_transform</li>
+</ol>
+</li>
+<li><p>估计器（estimator）：用于分类和聚类</p>
+
+<ol>
+<li>estimator.fit</li>
+<li>estimator.predict</li>
+</ol>
+</li>
+<li><p>特征提取（sklearn.feature_extraction）</p>
+
+<ol>
+<li>sklearn.feature_extraction.text.CountVectorizer：将文本转换为每个词出现的个数的向量（词典法）</li>
+<li>sklearn.feature_extraction.text.TfidfVectorizer：将文本转换为tfidf值的向量</li>
+</ol>
+</li>
+<li><p>数据集分割（sklearn.cross_validation）</p>
+
+<ol>
+<li>train_test_split(X, y, test_size, random_state)</li>
+</ol>
+</li>
+<li><p>效果评估（sklearn.metrics）</p>
+
+<ol>
+<li>confusion_matrix</li>
+<li>accuracy_score</li>
+<li>classification_report</li>
+<li>precision_recall_fscore_support</li>
+</ol>
+</li>
+</ol>
+
+
+<h3>sklearn文本特征提取</h3>
+
+<p>```python
+from sklearn.feature_extraction.text import CountVectorizer</p>
+
+<p>corpus = [&ldquo;Hey lets get lunch :)&rdquo;,</p>
+
+<pre><code>       "Hey!!! I need a favor"]
+</code></pre>
+
+<p>vectorize = CountVectorizer()
+vectorize.fit(corpus)</p>
+
+<h1>构建 文档词频矩阵</h1>
+
+<p>dtm = vectorize.transform(corpus)
+```</p>
+
+<p>```python
+from sklearn.feature_extraction.text import TfidfVectorizer</p>
+
+<p>def createDTM(corpus):</p>
+
+<pre><code>"""构建文档词语矩阵"""
+vectorize = TfidfVectorizer()
+#注意fit_transform相当于fit之后又transform。
+dtm = vectorize.fit_transform(corpus)
+return dtm
+</code></pre>
+
+<p>corpus = [&ldquo;Hey lets get lunch :)&rdquo;,</p>
+
+<pre><code>       "Hey!!! I need a favor"]
+</code></pre>
+
+<p>createDTM(corpus)
+```</p>
+
+<h3>sklearn文本分类</h3>
+
+<p>```python
+import re
+import pandas as pd
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split</p>
+
+<p>def normalize_numbers(s):</p>
+
+<pre><code>"""
+将数字特征统一替换为NUM
+"""
+return re.sub(r'\b\d+\b', 'NUM', s)
+</code></pre>
+
+<p>dataset = pd.read_csv(&lsquo;data/20news-18828.csv&rsquo;, header=None, delimiter=&lsquo;,&rsquo;, names=[&lsquo;label&rsquo;, &lsquo;text&rsquo;])</p>
+
+<h1>依次导入X， y， test_size</h1>
+
+<p>X_train, X_test, y_train, y_test = train_test_split(dataset.text, dataset.label, test_size=0.3)</p>
+
+<h1>CountVectorizer和TfidfVectorizer都有preprocessor参数，该参数传入预处理函数。</h1>
+
+<h1>也含有停用词处理参数stop_words</h1>
+
+<p>tv = TfidfVectorizer(preprocessor=normalize_numbers, stop_words=&lsquo;english&rsquo;)
+X_train_tf = tv.fit_transform(X_train)
+X_test_tf = tv.transform(X_test)</p>
+
+<h1>贝叶斯分类器</h1>
+
+<p>estimator2 = MultinomialNB()
+estimator2.fit(X_train_tf, y_train)
+predicted = estimator2.predict(X_test_tf)</p>
+
+<p>print(classification_report(y_test, predicted, labels=dataset.label.unique()))</p>
+
+<h1>逻辑回归分类器</h1>
+
+<p>LR = LogisticRegression()
+LR.fit(X_train_tf, y_train)
+predicted = LR.predict(X_test_tf)
+print(classification_report(y_test, predicted, labels=dataset.label.unique()))
+```</p>
+
+<h3>sklearn话题分析（聚类）</h3>
+
+<p>```python
+import csv
+import jieba
+import re
+from sklearn.cluster import KMeans
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+import pandas as pd</p>
+
+<p>def read_data(file):</p>
+
+<pre><code>"""
+读取csv数据，返回含有字符串的列表数据。
+:param file:  csv文件
+:return: 列表数据（列表中每个组成部分是字符串文本）
+"""
+
+df = pd.read_excel(file)
+#从dataframe中读取  news_content  列的所有新闻信息
+documents = df['news_content']
+return documents
+</code></pre>
+
+<p>def cluster_analysis(best_k, texts):</p>
+
+<pre><code>"""
+按照最佳聚类数k，将texts聚成k类。
+:param best_k: 聚类准确率最好的 k值
+:param texts: 列表数据（且列表中每个组成部分是字符串文本）
+:return:None
+
+"""
+
+documents = [' '.join(jieba.lcut(text)) for text in texts]
+
+tfidf = TfidfVectorizer(max_df=0.5)
+# 学习tfidf矩阵数据中的分布规律
+tfidf.fit(documents)
+matrix = tfidf.transform(documents)
+print('文档向量化矩阵：')
+print(matrix.toarray())
+# c初始化Kmeans估计器
+estimator = KMeans(n_clusters=best_k)
+estimator.fit(matrix)
+
+#机器给所有的文档打上的标签
+#此处self.label_pred 为一维列表，列表长度等于 文档的数目
+label_pred = estimator.labels_
+
+#保存聚类算法的分类结果 到output文件夹中。
+with open('data/cluster_output.csv', 'a+', encoding='gbk', newline='') as csvf:
+    writer = csv.writer(csvf)
+    writer.writerow(('news_content', 'cluster'))
+    #将新闻与 无kmeans聚类结果（cluster）写入csv文件
+    for idx, text in enumerate(texts):
+        try:
+            writer.writerow((text, label_pred[idx]))
+        except:
+            continue
+</code></pre>
+
+<p>texts = read_data(file=&lsquo;data/百度新闻.xlsx&rsquo;)
+cluster_analysis(best_k=19, texts=texts)              <br/>
+```</p>
+
+<h3>SVD计算消费者偏好</h3>
+
+<ol>
+<li>推荐算法比较常见的实现方式是协同过滤（Collaberative Filtering）。数据涉及到用户，产品，和产品评价三种信息。</li>
+<li>有了用户评价矩阵，可以采用奇异值分解（SVD），获得降维后的用户向量，从而更准确的计算得到推荐信息</li>
+<li>pip install scikit-surprise</li>
+</ol>
+
+
+<p>```python
+from surprise import Reader, Dataset
+from surprise import SVD, evaluate</p>
+
+<h1>定义数据格式</h1>
+
+<p>reader = Reader(line_format=&lsquo;user item rating timestamp&rsquo;, sep=&lsquo;\t&rsquo;)</p>
+
+<h1>使用reader格式从u.data文件中读取数据</h1>
+
+<p>data = Dataset.load_from_file(&lsquo;data/u.data&rsquo;, reader=reader)
+data.split(n_folds=5)</p>
+
+<h1>相当于scikit的机器学习算法的初始化</h1>
+
+<p>svd = SVD()</p>
+
+<h1>相当于scikit中的score，模型评估</h1>
+
+<p>evaluate(svd, data, measures=[&lsquo;RMSE&rsquo;, &lsquo;MAE&rsquo;])</p>
+
+<p>data = data.build_full_trainset()
+svd.fit(data)
+svd.predict(186, 302, 4)
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[python machine learning and text processing (1)]]></title>
     <link href="http://www.fengjimin.com/blog/2019/01/22/python-machine-learning-and-text-processing-1/"/>
     <updated>2019-01-22T15:32:00+08:00</updated>
@@ -21,6 +405,9 @@
     <content type="html"><![CDATA[<h3>前言</h3>
 
 <p>近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络，计算视觉与图像处理，模式识别，自然语言处理（NLP）等。也做过相关研究，读了些paper。可以说有一定基础。只是工作之后没有特意往这个方向发展，不自觉走入了被各种业务需求埋没的境地。如今AI大热，自己也对这块兴趣盎然，因而特别想在理论和实践上弄通。</p>
+
+<!--more-->
+
 
 <p>若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条推荐思路的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。</p>
 

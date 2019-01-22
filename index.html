@@ -9,7 +9,7 @@
 	<meta name="author" content="冯继敏">
 
 	
-	<meta name="description" content="2019-01-22 machine learning, programming Comments Python Machine Learning and Text Processing (1) 前言 近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络， &hellip;">
+	<meta name="description" content="2019-01-22 NLP, machine learning, programming Comments Python Machine Learning and Text Processing (2) 机器学习是个大课题，也是一种解决现实问题的思维方式。虽然单纯学习其算法不算太难， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,11 +110,49 @@
   
 
 
+<time datetime="2019-01-22T16:44:00+08:00" data-updated="true" itemprop="datePublished">2019-01-22</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/nlp/'>NLP</a>, <a class='category' href='/blog/categories/machine-learning/'>machine learning</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2019/01/22/python-machine-learning-and-text-processing-2/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2019/01/22/python-machine-learning-and-text-processing-2/" itemprop="url">Python Machine Learning and Text Processing (2)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>机器学习是个大课题，也是一种解决现实问题的思维方式。虽然单纯学习其算法不算太难，然而要有对解决实际问题的纯熟运用，却需要在理论与实践相结合方面下足功夫。python在这方面提供了足够便利的工具。</p>
+
+
+		
+		<a href="/blog/2019/01/22/python-machine-learning-and-text-processing-2/" class="more-link">阅读全文&rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2019-01-22T15:32:00+08:00" data-updated="true" itemprop="datePublished">2019-01-22</time></div>
 		<div class="tags">
 
 
-	<a class='category' href='/blog/categories/machine-learning/'>machine learning</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+	<a class='category' href='/blog/categories/nlp/'>NLP</a>, <a class='category' href='/blog/categories/machine-learning/'>machine learning</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
 
 
 </div>
@@ -128,287 +166,9 @@
 
 <p>近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络，计算视觉与图像处理，模式识别，自然语言处理（NLP）等。也做过相关研究，读了些paper。可以说有一定基础。只是工作之后没有特意往这个方向发展，不自觉走入了被各种业务需求埋没的境地。如今AI大热，自己也对这块兴趣盎然，因而特别想在理论和实践上弄通。</p>
 
-<p>若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条推荐思路的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。</p>
-
-<p>本blog主要对python文本处理基础，以及机器学习相关的内容进行提纲挈领。其中文本处理包含了分词、自然语言统计、可视化、数据分析等python库。而机器学习，则包含其理论分野、实现步骤、基本机器学习算法和python库等。</p>
-
-<p>以下为文本处理基础库相关内容。</p>
-
-<h3>分词</h3>
-
-<ol>
-<li><p>jieba 中文分词库</p>
-
-<ol>
-<li>cut, lcut</li>
-<li>load_userdict(file)</li>
-<li>jieba.posseg.cut</li>
-</ol>
-</li>
-<li><p>正则词频统计</p>
-
-<ol>
-<li><p><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</p></li>
-<li><p>&#8220;`python
-for word in wordset:
-    if len(word)>1 :
-        freq = wordlist.count(word)
-        result.append((word, freq))</p>
-
-<h1>[(w1,freq1),(w2,freq2)&hellip;.]</h1>
-
-<h1>对词频统计结果进行排序</h1>
-
-<p>new_result = sorted(result, key=lambda k:k[1], reverse=True)
-&#8220;`</p></li>
-</ol>
-</li>
-</ol>
-
-
-<h3>自然语言统计</h3>
-
-<ol>
-<li><p>nltk 自然语言处理库</p>
-
-<ol>
-<li><p>nltk.text.Text类</p>
-
-<ol>
-<li><code>text = Text(wordlist)</code></li>
-<li><code>text.concordance(word='汪淼', width=20, lines=10)</code> 上下文</li>
-<li><code>text.similar(word='叶文洁', num=10)</code>上下文最相关词</li>
-<li><code>text.count(word='叶文洁')</code> 统计词频</li>
-<li><code>text.dispersion_plot(words)</code> 离散图，横坐标表示词语的索引位置</li>
-</ol>
-</li>
-<li><p>Ngrams的实现</p>
-
-<ol>
-<li><code>nltk.util.bigrams(seq), trigrams(seq), ngrams(seq, n), skipgrams(seq, n, k)</code></li>
-</ol>
-</li>
-<li><p>nltk.probability</p>
-
-<ol>
-<li><p>FreqDist</p>
-
-<ol>
-<li><code>fdist = FreqDist(wordlist)</code></li>
-<li><code>fdist.items()</code> 词频对</li>
-<li><code>fdist.N()</code> 词语总数</li>
-<li><code>fdist.max()</code> 词语总数</li>
-<li><code>fdist.freq('三体')</code> 词频占比</li>
-<li><code>fdist['三体']</code> 词频</li>
-<li><code>fdist.plot(20,cumulative=True)</code> 前20个词画图</li>
-</ol>
-</li>
-<li><p>ConditionFreqDist 带条件的频率分布类</p>
-
-<ol>
-<li><p><code>python
-cfd = ConditionalFreqDist(
-         [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
-       )
-</code></p></li>
-<li><p>&#8220;`python
-cfd = ConditionalFreqDist(
-         (file, word)
-         for file in files   <br/>
-         for word in text_split(file))</p>
-
-<pre><code>#计算前10大词在各类文本中的频数
-cfd.tabulate(conditions=files, samples=words)
-</code></pre>
-
-<p>&#8220;`</p></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-
-<h3>可视化</h3>
-
-<ol>
-<li><p>pyecharts &ndash; 动态交互可视化库</p>
-
-<ol>
-<li>Bar, Bar3D, Pie, Map, &hellip;</li>
-</ol>
-
-
-<p>&#8220;`python
-&ldquo;&rdquo;&ldquo;
-kwargs为通用配置项
-&rdquo;&ldquo;&rdquo;
-add(name, x_axis, y_axis, data,
-    grid3d_opacity=1,
-    grid3d_shading=&lsquo;color&rsquo;, **kwargs)</p>
-
-<p>from pyecharts import Bar3D</p>
-
-<p>bar3d = Bar3D(&ldquo;3D 柱状图示例&rdquo;, width=1200, height=600
-              &hellip;
-              &hellip;
-bar3d.add(
-    &ldquo;&rdquo;,
-    x_axis,
-    y_axis,
-    [[d[1], d[0], d[2]] for d in data],
-    is_visualmap=True,
-    visual_range=[0, 20],
-    visual_range_color=range_color,
-    grid3d_width=200,
-    grid3d_depth=80,
-)
-bar3d.render(&lsquo;html/3D_Bar.html&rsquo;)
-&#8220;`</p>
-
-<ol>
-<li>WordCloud</li>
-</ol>
-
-
-<p>&#8220;`python
-&ldquo;&rdquo;&ldquo;
-name str图例名称
-attr list属性名称
-value    list属性所对应的值
-&rdquo;&ldquo;&rdquo;
-add(name, attr, value,
-    shape=&ldquo;circle&rdquo;,
-    word_gap=20,
-    word_size_range=None,
-    rotate_step=45)</p>
-
-<p>from pyecharts import WordCloud
-words = [&lsquo;Python&rsquo;, &lsquo;文本分析&rsquo;, &lsquo;编程&rsquo;]
-freqs = [100,200,50]
-wordcloud = WordCloud(width=1300, height=620)
-wordcloud.add(&ldquo;&rdquo;, words, freqs, word_size_range=[20, 100])
-wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
-&#8220;`</p></li>
-</ol>
-
-
-<h3>数据分析库</h3>
-
-<ol>
-<li><p>pandas</p>
-
-<ol>
-<li><p>Series</p>
-
-<ol>
-<li>Series(list), Series(dict)</li>
-<li>notnull, s2>2, s2[s2>2]</li>
-<li>数学运算</li>
-<li>value_counts(normalize=False)</li>
-<li>head, tail, sample</li>
-<li>plot(kind=&lsquo;bar&rsquo;)</li>
-</ol>
-</li>
-<li><p>DataFrame</p>
-
-<ol>
-<li><p>列向量和行向量组成的数据结构</p></li>
-<li><p>&#8220;`python
-import numpy as np
-import pandas as pd</p>
-
-<p>df = pd.DataFrame(np.arange(40).reshape(8,5),
-                 index=[&lsquo;one&rsquo;,&lsquo;two&rsquo;,&lsquo;three&rsquo;,&lsquo;four&rsquo;,&lsquo;five&rsquo;,&lsquo;six&rsquo;,&lsquo;seven&rsquo;,&lsquo;eight&rsquo;],
-                 columns=[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&#8217;,&lsquo;e&rsquo;])
-&#8220;`</p></li>
-<li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
-<li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
-<li><p><code>df.index</code> &ndash; 行索引</p></li>
-<li><p><code>df[:3]</code> &ndash; 行索引查询</p></li>
-<li><p><code>df.loc[['two','three'], ['a','d']]</code> &ndash; 子DataFrame查询</p></li>
-<li><p><code>df.loc[:, ['a','d']]</code>, <code>df[['a', 'd']]</code> &ndash; 所有行, a,d 列</p></li>
-<li><p><code>df.loc[['two','three'], :]</code> &ndash; 所有列</p></li>
-<li><p><code>df.describe()</code></p></li>
-<li><p><code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
-<li><p>列方向进行<strong>聚合运算</strong></p>
-
-<p><code>python
-df.agg({'colname1': ['mean', diyfunc],
-       'colname2': ['mean', 'sum']})
-</code></p>
-
-<ol>
-<li><code>df.agg('mean')</code>&ndash; 针对所有列的聚合操作</li>
-</ol>
-</li>
-<li><p>针对值进行分组 &ndash; <strong>groupby</strong></p>
-
-<ol>
-<li><code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
-<li><code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
-<li><code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
-</ol>
-</li>
-<li><p><code>newdf=df+100</code></p></li>
-<li><p><code>newdf&gt;120</code></p></li>
-<li><p><code>df[newdf&gt;120]</code></p></li>
-<li><p><strong>时间操作</strong></p>
-
-<ol>
-<li><p>pd.date_range() 生成一个时间段索引</p>
-
-<ol>
-<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
-</ol>
-</li>
-<li><p>pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
-
-<ol>
-<li><code>python
-datatime = pd.to_datetime(data)
-datatime.dt.year
-datatime.dt.month.value_counts()
-</code></li>
-</ol>
-</li>
-<li><p>指定日期为索引</p>
-
-<ol>
-<li><code>python
-tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
-tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
-tm_series['2017']
-</code></li>
-</ol>
-</li>
-<li><p>resample</p>
-
-<ol>
-<li><code>df.set_index('date').resample('2M')['ext price'].sum()</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>读取csv或excell文件为dataFrame</p>
-
-<ol>
-<li><code>df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')</code></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-
-<h3></h3>
 
 		
-		
+		<a href="/blog/2019/01/22/python-machine-learning-and-text-processing-1/" class="more-link">阅读全文&rarr;</a>
 	</div>
 
 </article>
