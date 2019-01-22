@@ -4,7 +4,7 @@
   <title><![CDATA[季米风]]></title>
   <link href="http://www.fengjimin.com/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T20:13:29+08:00</updated>
+  <updated>2019-01-22T20:16:46+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -598,12 +598,7 @@
 <li><code>fdist.plot(20,cumulative=True)</code> 前20个词画图</li>
 </ol>
 </li>
-<li><p>ConditionFreqDist 带条件的频率分布类</p>
-
-<ol>
-<li></li>
-</ol>
-</li>
+<li><p>ConditionFreqDist 带条件的频率分布类</p></li>
 </ol>
 </li>
 </ol>
@@ -620,8 +615,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<pre><code>     2. 
-</code></pre>
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

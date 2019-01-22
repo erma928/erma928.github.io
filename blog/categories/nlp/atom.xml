@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NLP | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/nlp/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T20:13:29+08:00</updated>
+  <updated>2019-01-22T20:16:46+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -487,12 +487,7 @@ for word in wordset:</p>
 <li><code>fdist.plot(20,cumulative=True)</code> 前20个词画图</li>
 </ol>
 </li>
-<li><p>ConditionFreqDist 带条件的频率分布类</p>
-
-<ol>
-<li></li>
-</ol>
-</li>
+<li><p>ConditionFreqDist 带条件的频率分布类</p></li>
 </ol>
 </li>
 </ol>
@@ -508,9 +503,6 @@ cfd = ConditionalFreqDist(</p>
 </code></pre>
 
 <p>```</p>
-
-<pre><code>     2. 
-</code></pre>
 
 <p>```python
 cfd = ConditionalFreqDist(</p>
