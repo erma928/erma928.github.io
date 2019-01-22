@@ -4,7 +4,7 @@
   <title><![CDATA[季米风]]></title>
   <link href="http://www.fengjimin.com/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T19:55:05+08:00</updated>
+  <updated>2019-01-22T20:00:12+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -538,22 +538,27 @@
 <li><p>正则词频统计</p>
 
 <ol>
-<li><p><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</p></li>
-<li><p>&#8220;`python
-for word in wordset:
-    if len(word)>1 :
-        freq = wordlist.count(word)
-        result.append((word, freq))</p>
-
-<h1>[(w1,freq1),(w2,freq2)&hellip;.]</h1>
-
-<h1>对词频统计结果进行排序</h1>
-
-<p>new_result = sorted(result, key=lambda k:k[1], reverse=True)
-&#8220;`</p></li>
+<li><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</li>
 </ol>
 </li>
 </ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">wordset</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span> <span class="p">:</span>
+</span><span class='line'>        <span class="n">freq</span> <span class="o">=</span> <span class="n">wordlist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">word</span><span class="p">,</span> <span class="n">freq</span><span class="p">))</span>
+</span><span class='line'><span class="c">#[(w1,freq1),(w2,freq2)....]</span>
+</span><span class='line'><span class="c">#对词频统计结果进行排序</span>
+</span><span class='line'><span class="n">new_result</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>自然语言统计</h3>
@@ -596,29 +601,43 @@ for word in wordset:
 <li><p>ConditionFreqDist 带条件的频率分布类</p>
 
 <ol>
-<li><p><code>python
-cfd = ConditionalFreqDist(
-         [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
-       )
-</code></p></li>
-<li><p>&#8220;`python
-cfd = ConditionalFreqDist(
-         (file, word)
-         for file in files   <br/>
-         for word in text_split(file))</p>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
-<pre><code>#计算前10大词在各类文本中的频数
-cfd.tabulate(conditions=files, samples=words)
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">cfd</span> <span class="o">=</span> <span class="n">ConditionalFreqDist</span><span class="p">(</span>
+</span><span class='line'>         <span class="p">[(</span><span class="n">conditon1</span><span class="p">,</span> <span class="n">event1</span><span class="p">),(</span><span class="n">conditon2</span><span class="p">,</span> <span class="n">event1</span><span class="p">),(</span><span class="n">conditon1</span><span class="p">,</span> <span class="n">event2</span><span class="p">)</span><span class="o">...</span><span class="p">(</span><span class="n">conditon_n</span><span class="p">,</span> <span class="n">event_n</span><span class="p">)]</span>
+</span><span class='line'>       <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>     2. 
 </code></pre>
 
-<p>&#8220;`</p></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">cfd</span> <span class="o">=</span> <span class="n">ConditionalFreqDist</span><span class="p">(</span>
+</span><span class='line'>         <span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+</span><span class='line'>         <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span>
+</span><span class='line'>         <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text_split</span><span class="p">(</span><span class="nb">file</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">#计算前10大词在各类文本中的频数</span>
+</span><span class='line'>    <span class="n">cfd</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">conditions</span><span class="o">=</span><span class="n">files</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="n">words</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>可视化</h3>
@@ -629,60 +648,101 @@ cfd.tabulate(conditions=files, samples=words)
 <ol>
 <li>Bar, Bar3D, Pie, Map, &hellip;</li>
 </ol>
+</li>
+</ol>
 
 
-<p>&#8220;`python
-&ldquo;&rdquo;&ldquo;
-kwargs为通用配置项
-&rdquo;&ldquo;&rdquo;
-add(name, x_axis, y_axis, data,
-    grid3d_opacity=1,
-    grid3d_shading=&lsquo;color&rsquo;, **kwargs)</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="sd">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="sd">kwargs为通用配置项</span>
+</span><span class='line'><span class="sd">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">grid3d_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">grid3d_shading</span><span class="o">=</span><span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">pyecharts</span> <span class="kn">import</span> <span class="n">Bar3D</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">bar3d</span> <span class="o">=</span> <span class="n">Bar3D</span><span class="p">(</span><span class="s">&quot;3D 柱状图示例&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span>
+</span><span class='line'>             <span class="o">...</span>
+</span><span class='line'>             <span class="o">...</span>
+</span><span class='line'><span class="n">bar3d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span class='line'>   <span class="s">&quot;&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">x_axis</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">y_axis</span><span class="p">,</span>
+</span><span class='line'>   <span class="p">[[</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">],</span>
+</span><span class='line'>   <span class="n">is_visualmap</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">visual_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+</span><span class='line'>   <span class="n">visual_range_color</span><span class="o">=</span><span class="n">range_color</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">grid3d_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">grid3d_depth</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'><span class="n">bar3d</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s">&#39;html/3D_Bar.html&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>from pyecharts import Bar3D</p>
-
-<p>bar3d = Bar3D(&ldquo;3D 柱状图示例&rdquo;, width=1200, height=600
-              &hellip;
-              &hellip;
-bar3d.add(
-    &ldquo;&rdquo;,
-    x_axis,
-    y_axis,
-    [[d[1], d[0], d[2]] for d in data],
-    is_visualmap=True,
-    visual_range=[0, 20],
-    visual_range_color=range_color,
-    grid3d_width=200,
-    grid3d_depth=80,
-)
-bar3d.render(&lsquo;html/3D_Bar.html&rsquo;)
-&#8220;`</p>
 
 <ol>
-<li>WordCloud</li>
+<li>. WordCloud</li>
 </ol>
 
 
-<p>&#8220;`python
-&ldquo;&rdquo;&ldquo;
-name str图例名称
-attr list属性名称
-value    list属性所对应的值
-&rdquo;&ldquo;&rdquo;
-add(name, attr, value,
-    shape=&ldquo;circle&rdquo;,
-    word_gap=20,
-    word_size_range=None,
-    rotate_step=45)</p>
-
-<p>from pyecharts import WordCloud
-words = [&lsquo;Python&rsquo;, &lsquo;文本分析&rsquo;, &lsquo;编程&rsquo;]
-freqs = [100,200,50]
-wordcloud = WordCloud(width=1300, height=620)
-wordcloud.add(&ldquo;&rdquo;, words, freqs, word_size_range=[20, 100])
-wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
-&#8220;`</p></li>
-</ol>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="sd">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="sd">name str图例名称</span>
+</span><span class='line'><span class="sd">attr list属性名称</span>
+</span><span class='line'><span class="sd">value    list属性所对应的值</span>
+</span><span class='line'><span class="sd">&quot;&quot;&quot;</span>
+</span><span class='line'><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">shape</span><span class="o">=</span><span class="s">&quot;circle&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">word_gap</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">word_size_range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+</span><span class='line'>   <span class="n">rotate_step</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">pyecharts</span> <span class="kn">import</span> <span class="n">WordCloud</span>
+</span><span class='line'><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Python&#39;</span><span class="p">,</span> <span class="s">&#39;文本分析&#39;</span><span class="p">,</span> <span class="s">&#39;编程&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
+</span><span class='line'><span class="n">wordcloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">620</span><span class="p">)</span>
+</span><span class='line'><span class="n">wordcloud</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">word_size_range</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</span><span class='line'><span class="n">wordcloud</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s">&#39;html/wordcloud.html&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>数据分析库</h3>
@@ -706,93 +766,152 @@ wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
 
 <ol>
 <li><p>列向量和行向量组成的数据结构</p></li>
-<li><p><code>python
-import numpy as np
-import pandas as pd
-df = pd.DataFrame(np.arange(40).reshape(8,5),
-                 index=['one','two','three','four','five','six','seven','eight'],
-                 columns=['a','b','c','d','e'])
-</code></p></li>
-<li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
-<li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
-<li><p><code>df.index</code> &ndash; 行索引</p></li>
-<li><p><code>df[:3]</code> &ndash; 行索引查询</p></li>
-<li><p><code>df.loc[['two','three'], ['a','d']]</code> &ndash; 子DataFrame查询</p></li>
-<li><p><code>df.loc[:, ['a','d']]</code>, <code>df[['a', 'd']]</code> &ndash; 所有行, a,d 列</p></li>
-<li><p><code>df.loc[['two','three'], :]</code> &ndash; 所有列</p></li>
-<li><p><code>df.describe()</code></p></li>
-<li><p><code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
-<li><p>列方向进行<strong>聚合运算</strong></p>
-
-<p><code>python
-df.agg({'colname1': ['mean', diyfunc],
-       'colname2': ['mean', 'sum']})
-</code></p>
-
-<ol>
-<li><code>df.agg('mean')</code>&ndash; 针对所有列的聚合操作</li>
+<li></li>
 </ol>
 </li>
-<li><p>针对值进行分组 &ndash; <strong>groupby</strong></p>
-
-<ol>
-<li><code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
-<li><code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
-<li><code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
 </ol>
 </li>
-<li><p><code>newdf=df+100</code></p></li>
-<li><p><code>newdf&gt;120</code></p></li>
-<li><p><code>df[newdf&gt;120]</code></p></li>
-<li><p><strong>时间操作</strong></p>
-
-<ol>
-<li><p>pd.date_range() 生成一个时间段索引</p>
-
-<ol>
-<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
 </ol>
-</li>
-<li><p>pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
 
-<ol>
-<li><code>python
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</span><span class='line'> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</span><span class='line'> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+</span><span class='line'>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span><span class="s">&#39;two&#39;</span><span class="p">,</span><span class="s">&#39;three&#39;</span><span class="p">,</span><span class="s">&#39;four&#39;</span><span class="p">,</span><span class="s">&#39;five&#39;</span><span class="p">,</span><span class="s">&#39;six&#39;</span><span class="p">,</span><span class="s">&#39;seven&#39;</span><span class="p">,</span><span class="s">&#39;eight&#39;</span><span class="p">],</span>
+</span><span class='line'>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">])</span>
+</span><span class='line'> <span class="sb">``</span><span class="err">`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">3.</span> <span class="sb">`df.drop(&#39;one&#39;, axis=&#39;rows&#39;, inplace=False)`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">4.</span> <span class="sb">`df[&#39;a&#39;]`</span><span class="p">,</span> <span class="sb">`df.a`</span> <span class="o">-</span> <span class="err">索引列名称</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">5.</span> <span class="sb">`df.index`</span> <span class="o">-</span> <span class="err">行索引</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">6.</span> <span class="sb">`df[:3]`</span> <span class="o">-</span> <span class="err">行索引查询</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">7.</span> <span class="sb">`df.loc[[&#39;two&#39;,&#39;three&#39;], [&#39;a&#39;,&#39;d&#39;]]`</span> <span class="o">-</span> <span class="err">子</span><span class="n">DataFrame</span><span class="err">查询</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">8.</span> <span class="sb">`df.loc[:, [&#39;a&#39;,&#39;d&#39;]]`</span><span class="p">,</span> <span class="sb">`df[[&#39;a&#39;, &#39;d&#39;]]`</span> <span class="o">-</span> <span class="err">所有行</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">d</span> <span class="err">列</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">9.</span> <span class="sb">`df.loc[[&#39;two&#39;,&#39;three&#39;], :]`</span> <span class="o">-</span> <span class="err">所有列</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">10.</span> <span class="sb">`df.describe()`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">11.</span> <span class="sb">`df[&#39;colname&#39;] = 10009`</span> <span class="o">-</span> <span class="err">新建或更新列</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">12.</span> <span class="err">列方向进行</span><span class="o">**</span><span class="err">聚合运算</span><span class="o">**</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>python
+df.agg({&lsquo;colname1&rsquo;: [&lsquo;mean&rsquo;, diyfunc],</p>
+
+<pre><code>   'colname2': ['mean', 'sum']})
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>          <span class="mf">1.</span> <span class="sb">`df.agg(&#39;mean&#39;)`</span><span class="o">-</span> <span class="err">针对所有列的聚合操作</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">13.</span> <span class="err">针对值进行分组</span> <span class="o">-</span> <span class="o">**</span><span class="n">groupby</span><span class="o">**</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="mf">1.</span> <span class="sb">`df.set_index(&#39;date&#39;).groupby(&#39;name&#39;)[&#39;ext price&#39;].resample(&quot;M&quot;).sum()`</span> <span class="o">-</span> <span class="err">针对</span><span class="n">name</span><span class="err">列的值进行分组</span>
+</span><span class='line'>          <span class="mf">2.</span> <span class="sb">`df.groupby([&#39;name&#39;, pd.Grouper(key=&#39;date&#39;, freq=&#39;M&#39;)])[&#39;ext price&#39;].sum()`</span>
+</span><span class='line'>          <span class="mf">3.</span> <span class="sb">`df.groupby(&#39;violation_raw&#39;).search_conducted.agg([&#39;mean&#39;, &#39;count&#39;])`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">14.</span> <span class="sb">`newdf=df+100`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">15.</span> <span class="sb">`newdf&gt;120`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">16.</span> <span class="sb">`df[newdf&gt;120]`</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="mf">17.</span> <span class="o">**</span><span class="err">时间操作</span><span class="o">**</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="mf">1.</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">()</span> <span class="err">生成一个时间段索引</span>
+</span><span class='line'>
+</span><span class='line'>             <span class="mf">1.</span> <span class="sb">`pd.date_range(&#39;2017/10/11 10:00:01&#39;, &#39;20181030&#39;, freq=&#39;3M&#39;) `</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="mf">2.</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="err">将</span><span class="n">data</span><span class="err">序列数据转换为</span><span class="n">datetime</span><span class="err">类型</span><span class="n">Series</span>
+</span><span class='line'>
+</span><span class='line'>             <span class="mf">1.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>python
 datatime = pd.to_datetime(data)
 datatime.dt.year
-datatime.dt.month.value_counts()
-</code></li>
-</ol>
-</li>
-<li><p>指定日期为索引</p>
+datatime.dt.month.value_counts()</p>
 
-<ol>
-<li><code>python
-tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'>          <span class="mf">3.</span> <span class="err">指定日期为索引</span>
+</span><span class='line'>
+</span><span class='line'>             <span class="mf">1.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>python
+tm_rng = pd.date_range(&lsquo;2017-12-31 12:00:00&rsquo;,periods=20, freq=&lsquo;5H&rsquo;)
 tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
-tm_series['2017']
-</code></li>
-</ol>
-</li>
-<li><p>resample</p>
+tm_series[&lsquo;2017&rsquo;]
+&#8220;`</p>
 
-<ol>
-<li><code>df.set_index('date').resample('2M')['ext price'].sum()</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>读取csv或excell文件为dataFrame</p>
+<pre><code>      4. resample
 
-<ol>
-<li><code>df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')</code></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+         1. `df.set_index('date').resample('2M')['ext price'].sum()`
 
+  18. 读取csv或excell文件为dataFrame
+
+      1. `df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')`
+</code></pre>
 
 <h3></h3>
 ]]></content>

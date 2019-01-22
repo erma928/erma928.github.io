@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T19:55:05+08:00</updated>
+  <updated>2019-01-22T20:00:12+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -429,23 +429,26 @@ svd.predict(186, 302, 4)
 <li><p>正则词频统计</p>
 
 <ol>
-<li><p><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</p></li>
-<li><p>```python
-for word in wordset:
-    if len(word)>1 :
-        freq = wordlist.count(word)
-        result.append((word, freq))</p>
+<li><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</li>
+</ol>
+</li>
+</ol>
+
+
+<p>```python
+for word in wordset:</p>
+
+<pre><code>if len(word)&gt;1 :
+    freq = wordlist.count(word)
+    result.append((word, freq))         
+</code></pre>
 
 <h1>[(w1,freq1),(w2,freq2)&hellip;.]</h1>
 
 <h1>对词频统计结果进行排序</h1>
 
 <p>new_result = sorted(result, key=lambda k:k[1], reverse=True)
-```</p></li>
-</ol>
-</li>
-</ol>
-
+```</p>
 
 <h3>自然语言统计</h3>
 
@@ -487,30 +490,40 @@ for word in wordset:
 <li><p>ConditionFreqDist 带条件的频率分布类</p>
 
 <ol>
-<li><p><code>python
-cfd = ConditionalFreqDist(
-         [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
-       )
-</code></p></li>
-<li><p>```python
-cfd = ConditionalFreqDist(
-         (file, word)
-         for file in files   <br/>
-         for word in text_split(file))</p>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
-<pre><code>#计算前10大词在各类文本中的频数
+
+<p>```python
+cfd = ConditionalFreqDist(</p>
+
+<pre><code>     [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
+   )
+</code></pre>
+
+<p>```</p>
+
+<pre><code>     2. 
+</code></pre>
+
+<p>```python
+cfd = ConditionalFreqDist(</p>
+
+<pre><code>     (file, word)
+     for file in files     
+     for word in text_split(file))
+
+#计算前10大词在各类文本中的频数
 cfd.tabulate(conditions=files, samples=words)
 </code></pre>
 
-<p>```</p></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
+<p>```</p>
 
 <h3>可视化</h3>
 
@@ -520,6 +533,8 @@ cfd.tabulate(conditions=files, samples=words)
 <ol>
 <li>Bar, Bar3D, Pie, Map, &hellip;</li>
 </ol>
+</li>
+</ol>
 
 
 <p>```python
@@ -527,44 +542,47 @@ cfd.tabulate(conditions=files, samples=words)
 kwargs为通用配置项
 &rdquo;&ldquo;&rdquo;
 add(name, x_axis, y_axis, data,
-    grid3d_opacity=1,
-    grid3d_shading=&lsquo;color&rsquo;, **kwargs)</p>
+   grid3d_opacity=1,
+   grid3d_shading=&lsquo;color&rsquo;, **kwargs)</p>
 
 <p>from pyecharts import Bar3D</p>
 
-<p>bar3d = Bar3D(&ldquo;3D 柱状图示例&rdquo;, width=1200, height=600
-              &hellip;
-              &hellip;
-bar3d.add(
-    &ldquo;&rdquo;,
-    x_axis,
-    y_axis,
-    [[d[1], d[0], d[2]] for d in data],
-    is_visualmap=True,
-    visual_range=[0, 20],
-    visual_range_color=range_color,
-    grid3d_width=200,
-    grid3d_depth=80,
+<p>bar3d = Bar3D(&ldquo;3D 柱状图示例&rdquo;, width=1200, height=600</p>
+
+<pre><code>         ...
+         ...
+</code></pre>
+
+<p>bar3d.add(
+   &ldquo;&rdquo;,
+   x_axis,
+   y_axis,
+   [[d[1], d[0], d[2]] for d in data],
+   is_visualmap=True,
+   visual_range=[0, 20],
+   visual_range_color=range_color,
+   grid3d_width=200,
+   grid3d_depth=80,
 )
 bar3d.render(&lsquo;html/3D_Bar.html&rsquo;)
 ```</p>
 
 <ol>
-<li>WordCloud</li>
+<li>. WordCloud</li>
 </ol>
 
 
 <p>```python
 &ldquo;&rdquo;&ldquo;
-name str图例名称
-attr list属性名称
-value    list属性所对应的值
+name    str图例名称
+attr    list属性名称
+value   list属性所对应的值
 &rdquo;&ldquo;&rdquo;
 add(name, attr, value,
-    shape=&ldquo;circle&rdquo;,
-    word_gap=20,
-    word_size_range=None,
-    rotate_step=45)</p>
+   shape=&ldquo;circle&rdquo;,
+   word_gap=20,
+   word_size_range=None,
+   rotate_step=45)</p>
 
 <p>from pyecharts import WordCloud
 words = [&lsquo;Python&rsquo;, &lsquo;文本分析&rsquo;, &lsquo;编程&rsquo;]
@@ -572,9 +590,7 @@ freqs = [100,200,50]
 wordcloud = WordCloud(width=1300, height=620)
 wordcloud.add(&ldquo;&rdquo;, words, freqs, word_size_range=[20, 100])
 wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
-```</p></li>
-</ol>
-
+```</p>
 
 <h3>数据分析库</h3>
 
@@ -601,9 +617,11 @@ wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
 import numpy as np
 import pandas as pd
 df = pd.DataFrame(np.arange(40).reshape(8,5),
-                 index=['one','two','three','four','five','six','seven','eight'],
-                 columns=['a','b','c','d','e'])
-</code></p></li>
+         index=['one','two','three','four','five','six','seven','eight'],
+         columns=['a','b','c','d','e'])
+</code></p>
+
+<ol>
 <li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
 <li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
 <li><p><code>df.index</code> &ndash; 行索引</p></li>
@@ -611,79 +629,76 @@ df = pd.DataFrame(np.arange(40).reshape(8,5),
 <li><p><code>df.loc[['two','three'], ['a','d']]</code> &ndash; 子DataFrame查询</p></li>
 <li><p><code>df.loc[:, ['a','d']]</code>, <code>df[['a', 'd']]</code> &ndash; 所有行, a,d 列</p></li>
 <li><p><code>df.loc[['two','three'], :]</code> &ndash; 所有列</p></li>
-<li><p><code>df.describe()</code></p></li>
-<li><p><code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
-<li><p>列方向进行<strong>聚合运算</strong></p>
+<li><p> <code>df.describe()</code></p></li>
+<li><p> <code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
+<li><p> 列方向进行<strong>聚合运算</strong></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+
+<p>```python
+df.agg({&lsquo;colname1&rsquo;: [&lsquo;mean&rsquo;, diyfunc],</p>
+
+<pre><code>   'colname2': ['mean', 'sum']})
+</code></pre>
+
+<p>```</p>
+
+<pre><code>      1. `df.agg('mean')`- 针对所有列的聚合操作
+
+  13. 针对值进行分组 - **groupby**
+
+      1. `df.set_index('date').groupby('name')['ext price'].resample("M").sum()` - 针对name列的值进行分组
+      2. `df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()`
+      3. `df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])`
+
+  14. `newdf=df+100`
+
+  15. `newdf&gt;120`
+
+  16. `df[newdf&gt;120]`
+
+  17. **时间操作**
+
+      1. pd.date_range() 生成一个时间段索引
+
+         1. `pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M') `
+
+      2. pd.to_datetime(data) 将data序列数据转换为datetime类型Series
+
+         1. 
+</code></pre>
 
 <p><code>python
-df.agg({'colname1': ['mean', diyfunc],
-       'colname2': ['mean', 'sum']})
-</code></p>
-
-<ol>
-<li><code>df.agg('mean')</code>&ndash; 针对所有列的聚合操作</li>
-</ol>
-</li>
-<li><p>针对值进行分组 &ndash; <strong>groupby</strong></p>
-
-<ol>
-<li><code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
-<li><code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
-<li><code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
-</ol>
-</li>
-<li><p><code>newdf=df+100</code></p></li>
-<li><p><code>newdf&gt;120</code></p></li>
-<li><p><code>df[newdf&gt;120]</code></p></li>
-<li><p><strong>时间操作</strong></p>
-
-<ol>
-<li><p>pd.date_range() 生成一个时间段索引</p>
-
-<ol>
-<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
-</ol>
-</li>
-<li><p>pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
-
-<ol>
-<li><code>python
 datatime = pd.to_datetime(data)
 datatime.dt.year
 datatime.dt.month.value_counts()
-</code></li>
-</ol>
-</li>
-<li><p>指定日期为索引</p>
+</code></p>
 
-<ol>
-<li><code>python
+<pre><code>      3. 指定日期为索引
+
+         1. 
+</code></pre>
+
+<p><code>python
 tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
 tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
 tm_series['2017']
-</code></li>
-</ol>
-</li>
-<li><p>resample</p>
+</code></p>
 
-<ol>
-<li><code>df.set_index('date').resample('2M')['ext price'].sum()</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>读取csv或excell文件为dataFrame</p>
+<pre><code>      4. resample
 
-<ol>
-<li><code>df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')</code></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+         1. `df.set_index('date').resample('2M')['ext price'].sum()`
 
+  18. 读取csv或excell文件为dataFrame
+
+      1. `df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')`
+</code></pre>
 
 <h3></h3>
 ]]></content>
