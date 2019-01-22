@@ -4,7 +4,7 @@
   <title><![CDATA[Category: machine learning | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T19:47:19+08:00</updated>
+  <updated>2019-01-22T19:55:05+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -597,14 +597,13 @@ wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
 
 <ol>
 <li><p>列向量和行向量组成的数据结构</p></li>
-<li><p>```python
+<li><p><code>python
 import numpy as np
-import pandas as pd</p>
-
-<p>df = pd.DataFrame(np.arange(40).reshape(8,5),
-                 index=[&lsquo;one&rsquo;,&lsquo;two&rsquo;,&lsquo;three&rsquo;,&lsquo;four&rsquo;,&lsquo;five&rsquo;,&lsquo;six&rsquo;,&lsquo;seven&rsquo;,&lsquo;eight&rsquo;],
-                 columns=[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d',&lsquo;e&rsquo;])
-```</p></li>
+import pandas as pd
+df = pd.DataFrame(np.arange(40).reshape(8,5),
+                 index=['one','two','three','four','five','six','seven','eight'],
+                 columns=['a','b','c','d','e'])
+</code></p></li>
 <li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
 <li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
 <li><p><code>df.index</code> &ndash; 行索引</p></li>
