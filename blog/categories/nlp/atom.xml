@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NLP | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/nlp/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T20:00:12+08:00</updated>
+  <updated>2019-01-22T20:02:25+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -409,7 +409,7 @@ svd.predict(186, 302, 4)
 <!--more-->
 
 
-<p>若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条推荐思路的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。</p>
+<p>若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条最佳思路、还有make things explicit的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。</p>
 
 <p>本blog主要对python文本处理基础，以及机器学习相关的内容进行提纲挈领。其中文本处理包含了分词、自然语言统计、可视化、数据分析等python库。而机器学习，则包含其理论分野、实现步骤、基本机器学习算法和python库等。</p>
 
