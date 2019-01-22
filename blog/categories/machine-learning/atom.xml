@@ -1,130 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<title>季米风</title>
-	<meta name="author" content="冯继敏">
-
-	
-	<meta name="description" content="2019-01-22 machine learning, programming Comments Python Machine Learning and Text Processing (1) 前言 近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络， &hellip;">
-	
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="季米风" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://www.fengjimin.com/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-</head>
-
-
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("joe5338.cn@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
-	</script>
-</div>
-<hgroup>
-  <h1><a href="/">季米风</a></h1>
-  
-    <h2>简单，有价值</h2>
-  
-</hgroup>
-
-<nav id="main-nav"><ul class="main-navigation">
-  <li><a href="/about">About me</a></li>
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-
-<section class="aboutme">
-  <p>
-    
-  </p>
-</section>
-</nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-		
-		
-		
-		<a class="github" href="https://github.com/erma928" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
+  <title><![CDATA[Category: machine learning | 季米风]]></title>
+  <link href="http://www.fengjimin.com/blog/categories/machine-learning/atom.xml" rel="self"/>
+  <link href="http://www.fengjimin.com/"/>
+  <updated>2019-01-22T16:36:22+08:00</updated>
+  <id>http://www.fengjimin.com/</id>
+  <author>
+    <name><![CDATA[冯继敏]]></name>
+    <email><![CDATA[joe5338.cn@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2019-01-22T15:32:00+08:00" data-updated="true" itemprop="datePublished">2019-01-22</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/machine-learning/'>machine learning</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2019/01/22/python-machine-learning-and-text-processing-1/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2019/01/22/python-machine-learning-and-text-processing-1/" itemprop="url">Python Machine Learning and Text Processing (1)</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h3>前言</h3>
+  <entry>
+    <title type="html"><![CDATA[python machine learning and text processing (1)]]></title>
+    <link href="http://www.fengjimin.com/blog/2019/01/22/python-machine-learning-and-text-processing-1/"/>
+    <updated>2019-01-22T15:32:00+08:00</updated>
+    <id>http://www.fengjimin.com/blog/2019/01/22/python-machine-learning-and-text-processing-1</id>
+    <content type="html"><![CDATA[<h3>前言</h3>
 
 <p>近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络，计算视觉与图像处理，模式识别，自然语言处理（NLP）等。也做过相关研究，读了些paper。可以说有一定基础。只是工作之后没有特意往这个方向发展，不自觉走入了被各种业务需求埋没的境地。如今AI大热，自己也对这块兴趣盎然，因而特别想在理论和实践上弄通。</p>
 
@@ -149,7 +43,7 @@
 
 <ol>
 <li><p><code>words = re.findall(r'[\u4e00-\u9fa5]+', test)</code> 匹配中文正则</p></li>
-<li><p>&#8220;`python
+<li><p>```python
 for word in wordset:
     if len(word)>1 :
         freq = wordlist.count(word)
@@ -160,7 +54,7 @@ for word in wordset:
 <h1>对词频统计结果进行排序</h1>
 
 <p>new_result = sorted(result, key=lambda k:k[1], reverse=True)
-&#8220;`</p></li>
+```</p></li>
 </ol>
 </li>
 </ol>
@@ -211,7 +105,7 @@ cfd = ConditionalFreqDist(
          [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
        )
 </code></p></li>
-<li><p>&#8220;`python
+<li><p>```python
 cfd = ConditionalFreqDist(
          (file, word)
          for file in files   <br/>
@@ -221,7 +115,7 @@ cfd = ConditionalFreqDist(
 cfd.tabulate(conditions=files, samples=words)
 </code></pre>
 
-<p>&#8220;`</p></li>
+<p>```</p></li>
 </ol>
 </li>
 </ol>
@@ -241,7 +135,7 @@ cfd.tabulate(conditions=files, samples=words)
 </ol>
 
 
-<p>&#8220;`python
+<p>```python
 &ldquo;&rdquo;&ldquo;
 kwargs为通用配置项
 &rdquo;&ldquo;&rdquo;
@@ -266,14 +160,14 @@ bar3d.add(
     grid3d_depth=80,
 )
 bar3d.render(&lsquo;html/3D_Bar.html&rsquo;)
-&#8220;`</p>
+```</p>
 
 <ol>
 <li>WordCloud</li>
 </ol>
 
 
-<p>&#8220;`python
+<p>```python
 &ldquo;&rdquo;&ldquo;
 name str图例名称
 attr list属性名称
@@ -291,7 +185,7 @@ freqs = [100,200,50]
 wordcloud = WordCloud(width=1300, height=620)
 wordcloud.add(&ldquo;&rdquo;, words, freqs, word_size_range=[20, 100])
 wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
-&#8220;`</p></li>
+```</p></li>
 </ol>
 
 
@@ -316,14 +210,14 @@ wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
 
 <ol>
 <li><p>列向量和行向量组成的数据结构</p></li>
-<li><p>&#8220;`python
+<li><p>```python
 import numpy as np
 import pandas as pd</p>
 
 <p>df = pd.DataFrame(np.arange(40).reshape(8,5),
                  index=[&lsquo;one&rsquo;,&lsquo;two&rsquo;,&lsquo;three&rsquo;,&lsquo;four&rsquo;,&lsquo;five&rsquo;,&lsquo;six&rsquo;,&lsquo;seven&rsquo;,&lsquo;eight&rsquo;],
-                 columns=[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&#8217;,&lsquo;e&rsquo;])
-&#8220;`</p></li>
+                 columns=[&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d',&lsquo;e&rsquo;])
+```</p></li>
 <li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
 <li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
 <li><p><code>df.index</code> &ndash; 行索引</p></li>
@@ -406,129 +300,7 @@ tm_series['2017']
 
 
 <h3></h3>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
+]]></content>
+  </entry>
   
-
-
-<time datetime="2018-09-13T21:54:00+08:00" data-updated="true" itemprop="datePublished">2018-09-13</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/zhi-chang-,zhong-nian-wei-ji/'>职场，中年危机</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2018/09/13/how-did-i-step-into-a-career-dead-end/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2018/09/13/how-did-i-step-into-a-career-dead-end/" itemprop="url">我是如何一步步走向职场死胡同的</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h3>前言</h3>
-
-<p>2018年，我从普通程序员变成了无业游民，不惑之年近在眼前，前方却好像找不到路了，是一个死胡同。10年以前，这一切都难以想象。我是怎么走到了这一步？</p>
-
-
-		
-		<a href="/blog/2018/09/13/how-did-i-step-into-a-career-dead-end/" class="more-link">阅读全文&rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-02T20:47:00+08:00" data-updated="true" itemprop="datePublished">2013-09-02</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/application/'>application</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2013/09/02/an-engineers-view-of-application-development/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/09/02/an-engineers-view-of-application-development/" itemprop="url">浅谈软件开发</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<blockquote><p>第一篇日志写于2013年。2015年的今日，经历一个充实的互联网业务的开发周期，回头看看，理解又有不同。说到底软件开发是定义问题，解决问题，二者合一。开发的过程绝不仅仅是写代码，测试，上线，支持。而是始终围绕其中的一个主题：用户、业务、产品、开发，各种角色不断沟通，提出各自理解，以各种形式如描叙、图表、代码、产品、UI、体验。。。这一切的一切，都是软件开发的一部分，每一个部分，都有同样的重要性，都可以遵循同样的方法论。最终的目标，是所有stakeholder达到一致的理解，从而从中得到自己想要的价值。</p></blockquote>
-
-
-		
-		<a href="/blog/2013/09/02/an-engineers-view-of-application-development/" class="more-link">阅读全文&rarr;</a>
-	</div>
-
-</article>
-
-</div>
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
-			</div>
-			<footer id="footer" class="inner"><p>
-  Copyright &copy; 2019 - 冯继敏 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-</footer>
-			
-
-<script type="text/javascript">
-      var disqus_shortname = 'fengjimin';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
-</body>
-</html>
+</feed>
