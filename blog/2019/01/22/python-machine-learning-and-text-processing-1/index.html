@@ -348,8 +348,7 @@
 <li><p>DataFrame</p>
 
 <ol>
-<li><p>列向量和行向量组成的数据结构</p></li>
-<li></li>
+<li>列向量和行向量组成的数据结构</li>
 </ol>
 </li>
 </ol>
@@ -398,38 +397,19 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li><p> <code>df.agg('mean')</code>&ndash; 针对所有列的聚合操作</p></li>
-<li><p>. 针对值进行分组 &ndash; <strong>groupby</strong></p>
-
-<ol>
-<li> <code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
-<li> <code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
-<li> <code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
-</ol>
-</li>
-<li><p>. <code>newdf=df+100</code></p></li>
-<li><p>. <code>newdf&gt;120</code></p></li>
-<li><p>. <code>df[newdf&gt;120]</code></p></li>
-<li><p>. <strong>时间操作</strong></p>
-
-<ol>
-<li><p> pd.date_range() 生成一个时间段索引</p>
-
-<ol>
-<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
-</ol>
-</li>
-<li><p> pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
-
-<ol>
-<li></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
+<pre><code>    *. `df.agg('mean')`- 针对所有列的聚合操作
+  13. 针对值进行分组 - **groupby**
+      1. `df.set_index('date').groupby('name')['ext price'].resample("M").sum()` - 针对name列的值进行分组
+      2. `df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()`
+      3. `df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])`
+  14. `newdf=df+100`
+  15. `newdf&gt;120`
+  16. `df[newdf&gt;120]`
+  17. **时间操作**
+      1. pd.date_range() 生成一个时间段索引
+         1. `pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M') `
+      2. pd.to_datetime(data) 将data序列数据转换为datetime类型Series
+</code></pre>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -441,7 +421,6 @@
 
 
 <pre><code>      3. 指定日期为索引
-
          1. 
 </code></pre>
 
@@ -455,15 +434,10 @@
 
 
 <pre><code>      4. resample
-
          1. `df.set_index('date').resample('2M')['ext price'].sum()`
-
   18. 读取csv或excell文件为dataFrame
-
       1. `df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')`
 </code></pre>
-
-<h3></h3>
 </div>
 
 </article>
