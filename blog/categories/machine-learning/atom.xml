@@ -4,7 +4,7 @@
   <title><![CDATA[Category: machine learning | 季米风]]></title>
   <link href="http://www.fengjimin.com/blog/categories/machine-learning/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T20:03:21+08:00</updated>
+  <updated>2019-01-22T20:08:22+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -617,11 +617,9 @@ wordcloud.render(&lsquo;html/wordcloud.html&rsquo;)
 import numpy as np
 import pandas as pd
 df = pd.DataFrame(np.arange(40).reshape(8,5),
-         index=['one','two','three','four','five','six','seven','eight'],
-         columns=['a','b','c','d','e'])
-</code></p>
-
-<ol>
+       index=['one','two','three','four','five','six','seven','eight'],
+       columns=['a','b','c','d','e'])
+</code></p></li>
 <li><p><code>df.drop('one', axis='rows', inplace=False)</code></p></li>
 <li><p><code>df['a']</code>, <code>df.a</code> &ndash; 索引列名称</p></li>
 <li><p><code>df.index</code> &ndash; 行索引</p></li>
@@ -629,11 +627,9 @@ df = pd.DataFrame(np.arange(40).reshape(8,5),
 <li><p><code>df.loc[['two','three'], ['a','d']]</code> &ndash; 子DataFrame查询</p></li>
 <li><p><code>df.loc[:, ['a','d']]</code>, <code>df[['a', 'd']]</code> &ndash; 所有行, a,d 列</p></li>
 <li><p><code>df.loc[['two','three'], :]</code> &ndash; 所有列</p></li>
-<li><p> <code>df.describe()</code></p></li>
-<li><p> <code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
-<li><p> 列方向进行<strong>聚合运算</strong></p></li>
-</ol>
-</li>
+<li><p><code>df.describe()</code></p></li>
+<li><p><code>df['colname'] = 10009</code> &ndash; 新建或更新列</p></li>
+<li><p>列方向进行<strong>聚合运算</strong></p></li>
 </ol>
 </li>
 </ol>
@@ -647,58 +643,70 @@ df.agg({&lsquo;colname1&rsquo;: [&lsquo;mean&rsquo;, diyfunc],</p>
 <pre><code>   'colname2': ['mean', 'sum']})
 </code></pre>
 
-<p>```</p>
+<p><code>``
+  1.</code>df.agg(&lsquo;mean&rsquo;)`&ndash; 针对所有列的聚合操作</p>
 
-<pre><code>      1. `df.agg('mean')`- 针对所有列的聚合操作
+<ol>
+<li><p>. 针对值进行分组 &ndash; <strong>groupby</strong></p>
 
-  13. 针对值进行分组 - **groupby**
+<ol>
+<li> <code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
+<li> <code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
+<li> <code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
+</ol>
+</li>
+<li><p>. <code>newdf=df+100</code></p></li>
+<li><p>. <code>newdf&gt;120</code></p></li>
+<li><p>. <code>df[newdf&gt;120]</code></p></li>
+<li><p>. <strong>时间操作</strong></p>
 
-      1. `df.set_index('date').groupby('name')['ext price'].resample("M").sum()` - 针对name列的值进行分组
-      2. `df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()`
-      3. `df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])`
+<ol>
+<li><p> pd.date_range() 生成一个时间段索引</p>
 
-  14. `newdf=df+100`
+<ol>
+<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
+</ol>
+</li>
+<li><p> pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
 
-  15. `newdf&gt;120`
-
-  16. `df[newdf&gt;120]`
-
-  17. **时间操作**
-
-      1. pd.date_range() 生成一个时间段索引
-
-         1. `pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M') `
-
-      2. pd.to_datetime(data) 将data序列数据转换为datetime类型Series
-
-         1. 
-</code></pre>
-
-<p><code>python
+<ol>
+<li><p><code>python
 datatime = pd.to_datetime(data)
 datatime.dt.year
 datatime.dt.month.value_counts()
-</code></p>
+</code></p></li>
+<li><p> 指定日期为索引</p>
 
-<pre><code>      3. 指定日期为索引
-
-         1. 
-</code></pre>
-
-<p><code>python
+<ol>
+<li><p><code>python
 tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
 tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
 tm_series['2017']
 </code></p>
 
-<pre><code>      4. resample
+<ol>
+<li><p> resample</p>
 
-         1. `df.set_index('date').resample('2M')['ext price'].sum()`
+<ol>
+<li><code>df.set_index('date').resample('2M')['ext price'].sum()</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>读取csv或excell文件为dataFrame</p>
 
-  18. 读取csv或excell文件为dataFrame
+<ol>
+<li><code>df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
-      1. `df = pd.read_excel('data/sample-salesv3.xlsx', encoding='gbk')`
-</code></pre>
 
 <h3></h3>
 ]]></content>

@@ -4,7 +4,7 @@
   <title><![CDATA[季米风]]></title>
   <link href="http://www.fengjimin.com/atom.xml" rel="self"/>
   <link href="http://www.fengjimin.com/"/>
-  <updated>2019-01-22T20:03:21+08:00</updated>
+  <updated>2019-01-22T20:08:22+08:00</updated>
   <id>http://www.fengjimin.com/</id>
   <author>
     <name><![CDATA[冯继敏]]></name>
@@ -779,130 +779,97 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-</span><span class='line'> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-</span><span class='line'> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
-</span><span class='line'>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span><span class="s">&#39;two&#39;</span><span class="p">,</span><span class="s">&#39;three&#39;</span><span class="p">,</span><span class="s">&#39;four&#39;</span><span class="p">,</span><span class="s">&#39;five&#39;</span><span class="p">,</span><span class="s">&#39;six&#39;</span><span class="p">,</span><span class="s">&#39;seven&#39;</span><span class="p">,</span><span class="s">&#39;eight&#39;</span><span class="p">],</span>
-</span><span class='line'>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">])</span>
-</span><span class='line'> <span class="sb">``</span><span class="err">`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">3.</span> <span class="sb">`df.drop(&#39;one&#39;, axis=&#39;rows&#39;, inplace=False)`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">4.</span> <span class="sb">`df[&#39;a&#39;]`</span><span class="p">,</span> <span class="sb">`df.a`</span> <span class="o">-</span> <span class="err">索引列名称</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">5.</span> <span class="sb">`df.index`</span> <span class="o">-</span> <span class="err">行索引</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">6.</span> <span class="sb">`df[:3]`</span> <span class="o">-</span> <span class="err">行索引查询</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">7.</span> <span class="sb">`df.loc[[&#39;two&#39;,&#39;three&#39;], [&#39;a&#39;,&#39;d&#39;]]`</span> <span class="o">-</span> <span class="err">子</span><span class="n">DataFrame</span><span class="err">查询</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">8.</span> <span class="sb">`df.loc[:, [&#39;a&#39;,&#39;d&#39;]]`</span><span class="p">,</span> <span class="sb">`df[[&#39;a&#39;, &#39;d&#39;]]`</span> <span class="o">-</span> <span class="err">所有行</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">d</span> <span class="err">列</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">9.</span> <span class="sb">`df.loc[[&#39;two&#39;,&#39;three&#39;], :]`</span> <span class="o">-</span> <span class="err">所有列</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">10.</span> <span class="sb">`df.describe()`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">11.</span> <span class="sb">`df[&#39;colname&#39;] = 10009`</span> <span class="o">-</span> <span class="err">新建或更新列</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">12.</span> <span class="err">列方向进行</span><span class="o">**</span><span class="err">聚合运算</span><span class="o">**</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</span><span class='line'><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+</span><span class='line'>                <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span><span class="s">&#39;two&#39;</span><span class="p">,</span><span class="s">&#39;three&#39;</span><span class="p">,</span><span class="s">&#39;four&#39;</span><span class="p">,</span><span class="s">&#39;five&#39;</span><span class="p">,</span><span class="s">&#39;six&#39;</span><span class="p">,</span><span class="s">&#39;seven&#39;</span><span class="p">,</span><span class="s">&#39;eight&#39;</span><span class="p">],</span>
+</span><span class='line'>                <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">])</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>python
-df.agg({&lsquo;colname1&rsquo;: [&lsquo;mean&rsquo;, diyfunc],</p>
+<pre><code>  3. `df.drop('one', axis='rows', inplace=False)`
 
-<pre><code>   'colname2': ['mean', 'sum']})
+  4. `df['a']`, `df.a` - 索引列名称
+
+  5. `df.index` - 行索引
+
+  6. `df[:3]` - 行索引查询
+
+  7. `df.loc[['two','three'], ['a','d']]` - 子DataFrame查询
+
+  8. `df.loc[:, ['a','d']]`, `df[['a', 'd']]` - 所有行, a,d 列
+
+  9. `df.loc[['two','three'], :]` - 所有列
+
+  10. `df.describe()`
+
+  11. `df['colname'] = 10009` - 新建或更新列
+
+  12. 列方向进行**聚合运算**
+</code></pre>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s">&#39;colname1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;mean&#39;</span><span class="p">,</span> <span class="n">diyfunc</span><span class="p">],</span>
+</span><span class='line'>       <span class="s">&#39;colname2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;mean&#39;</span><span class="p">,</span> <span class="s">&#39;sum&#39;</span><span class="p">]})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p> <code>df.agg('mean')</code>&ndash; 针对所有列的聚合操作</p></li>
+<li><p>. 针对值进行分组 &ndash; <strong>groupby</strong></p>
+
+<ol>
+<li> <code>df.set_index('date').groupby('name')['ext price'].resample("M").sum()</code> &ndash; 针对name列的值进行分组</li>
+<li> <code>df.groupby(['name', pd.Grouper(key='date', freq='M')])['ext price'].sum()</code></li>
+<li> <code>df.groupby('violation_raw').search_conducted.agg(['mean', 'count'])</code></li>
+</ol>
+</li>
+<li><p>. <code>newdf=df+100</code></p></li>
+<li><p>. <code>newdf&gt;120</code></p></li>
+<li><p>. <code>df[newdf&gt;120]</code></p></li>
+<li><p>. <strong>时间操作</strong></p>
+
+<ol>
+<li><p> pd.date_range() 生成一个时间段索引</p>
+
+<ol>
+<li><code>pd.date_range('2017/10/11 10:00:01', '20181030', freq='3M')</code></li>
+</ol>
+</li>
+<li><p> pd.to_datetime(data) 将data序列数据转换为datetime类型Series</p>
+
+<ol>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">datatime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="n">datatime</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+</span><span class='line'><span class="n">datatime</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>      3. 指定日期为索引
+
+         1. 
 </code></pre>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'>          <span class="mf">1.</span> <span class="sb">`df.agg(&#39;mean&#39;)`</span><span class="o">-</span> <span class="err">针对所有列的聚合操作</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">13.</span> <span class="err">针对值进行分组</span> <span class="o">-</span> <span class="o">**</span><span class="n">groupby</span><span class="o">**</span>
-</span><span class='line'>
-</span><span class='line'>          <span class="mf">1.</span> <span class="sb">`df.set_index(&#39;date&#39;).groupby(&#39;name&#39;)[&#39;ext price&#39;].resample(&quot;M&quot;).sum()`</span> <span class="o">-</span> <span class="err">针对</span><span class="n">name</span><span class="err">列的值进行分组</span>
-</span><span class='line'>          <span class="mf">2.</span> <span class="sb">`df.groupby([&#39;name&#39;, pd.Grouper(key=&#39;date&#39;, freq=&#39;M&#39;)])[&#39;ext price&#39;].sum()`</span>
-</span><span class='line'>          <span class="mf">3.</span> <span class="sb">`df.groupby(&#39;violation_raw&#39;).search_conducted.agg([&#39;mean&#39;, &#39;count&#39;])`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">14.</span> <span class="sb">`newdf=df+100`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">15.</span> <span class="sb">`newdf&gt;120`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">16.</span> <span class="sb">`df[newdf&gt;120]`</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="mf">17.</span> <span class="o">**</span><span class="err">时间操作</span><span class="o">**</span>
-</span><span class='line'>
-</span><span class='line'>          <span class="mf">1.</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">()</span> <span class="err">生成一个时间段索引</span>
-</span><span class='line'>
-</span><span class='line'>             <span class="mf">1.</span> <span class="sb">`pd.date_range(&#39;2017/10/11 10:00:01&#39;, &#39;20181030&#39;, freq=&#39;3M&#39;) `</span>
-</span><span class='line'>
-</span><span class='line'>          <span class="mf">2.</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="err">将</span><span class="n">data</span><span class="err">序列数据转换为</span><span class="n">datetime</span><span class="err">类型</span><span class="n">Series</span>
-</span><span class='line'>
-</span><span class='line'>             <span class="mf">1.</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">tm_rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">&#39;2017-12-31 12:00:00&#39;</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s">&#39;5H&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">tm_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tm_rng</span><span class="p">)),</span> <span class="n">index</span><span class="o">=</span><span class="n">tm_rng</span><span class="p">)</span>
+</span><span class='line'><span class="n">tm_series</span><span class="p">[</span><span class="s">&#39;2017&#39;</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>python
-datatime = pd.to_datetime(data)
-datatime.dt.year
-datatime.dt.month.value_counts()</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'>          <span class="mf">3.</span> <span class="err">指定日期为索引</span>
-</span><span class='line'>
-</span><span class='line'>             <span class="mf">1.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>python
-tm_rng = pd.date_range(&lsquo;2017-12-31 12:00:00&rsquo;,periods=20, freq=&lsquo;5H&rsquo;)
-tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
-tm_series[&lsquo;2017&rsquo;]
-&#8220;`</p>
 
 <pre><code>      4. resample
 
