@@ -3,14 +3,16 @@ layout: post
 title: "python machine learning and text processing (1)"
 date: 2019-01-22 15:32
 comments: true
-categories: [programming, machine learning]
+categories: [programming, machine learning, NLP]
 ---
 
 ### 前言
 
 近期在学习python和机器学习。其实本人大学时学过不少机器学习相关专业课，包括神经网络，计算视觉与图像处理，模式识别，自然语言处理（NLP）等。也做过相关研究，读了些paper。可以说有一定基础。只是工作之后没有特意往这个方向发展，不自觉走入了被各种业务需求埋没的境地。如今AI大热，自己也对这块兴趣盎然，因而特别想在理论和实践上弄通。
 
-若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条推荐思路的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。
+<!--more-->
+
+若干年以前，因Ruby on Rails快速开发的特性，自己曾把ruby当作银弹，很痴迷于这门语言。也看了很多python与ruby谁更强大这方面的争论。当时觉得ruby的表达能力很强大且优美，近乎魔术，而python，光使用缩进语法这一点就觉得有点怪，因而并没有深入去学。虽然其解决问题有且只有一条最佳思路、还有make things explicit的理念听起来有些道理。然而世事难料，随着Rails渐趋冷静，ruby似乎也渐趋没落。而python，随着人工智能的兴起却在走向潮头。当然，自己现在来学python，已经没有了当初的门户之见，反倒很容易的见识到python简单易用，以及确实强大的方面。在大数据和人工智能的浪潮中，python能站在前沿，是有它的独到之处的。
 
 本blog主要对python文本处理基础，以及机器学习相关的内容进行提纲挈领。其中文本处理包含了分词、自然语言统计、可视化、数据分析等python库。而机器学习，则包含其理论分野、实现步骤、基本机器学习算法和python库等。
 
@@ -28,16 +30,15 @@ categories: [programming, machine learning]
 
    1. `words = re.findall(r'[\u4e00-\u9fa5]+', test)` 匹配中文正则
 
-   2. ```python
-      for word in wordset:
-          if len(word)>1 :
-              freq = wordlist.count(word)
-              result.append((word, freq))
-         
-      #[(w1,freq1),(w2,freq2)....]
-      #对词频统计结果进行排序
-      new_result = sorted(result, key=lambda k:k[1], reverse=True)
-      ```
+```python
+for word in wordset:
+    if len(word)>1 :
+        freq = wordlist.count(word)
+        result.append((word, freq))         
+#[(w1,freq1),(w2,freq2)....]
+#对词频统计结果进行排序
+new_result = sorted(result, key=lambda k:k[1], reverse=True)
+```
 
 ### 自然语言统计
 
@@ -71,21 +72,22 @@ categories: [programming, machine learning]
 
          1. 
 
-            ```python
-            cfd = ConditionalFreqDist(
-                     [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
-                   )
-            ```
+```python
+cfd = ConditionalFreqDist(
+         [(conditon1, event1),(conditon2, event1),(conditon1, event2)...(conditon_n, event_n)]
+       )
+```
 
-         2. ```python
-            cfd = ConditionalFreqDist(
-                     (file, word)
-                     for file in files     
-                     for word in text_split(file))
-            
-                #计算前10大词在各类文本中的频数
-                cfd.tabulate(conditions=files, samples=words)
-            ```
+         2. 
+```python
+cfd = ConditionalFreqDist(
+         (file, word)
+         for file in files     
+         for word in text_split(file))
+
+    #计算前10大词在各类文本中的频数
+    cfd.tabulate(conditions=files, samples=words)
+```
 
 ### 可视化
 
@@ -93,54 +95,54 @@ categories: [programming, machine learning]
 
    1. Bar, Bar3D, Pie, Map, ...
 
-   ```python
-   """
-   kwargs为通用配置项
-   """
-   add(name, x_axis, y_axis, data,
-       grid3d_opacity=1,
-       grid3d_shading='color', **kwargs) 
-   
-   from pyecharts import Bar3D
-   
-   bar3d = Bar3D("3D 柱状图示例", width=1200, height=600
-                 ...
-                 ...
-   bar3d.add(
-       "",
-       x_axis,
-       y_axis,
-       [[d[1], d[0], d[2]] for d in data],
-       is_visualmap=True,
-       visual_range=[0, 20],
-       visual_range_color=range_color,
-       grid3d_width=200,
-       grid3d_depth=80,
-   )
-   bar3d.render('html/3D_Bar.html')
-   ```
+```python
+"""
+kwargs为通用配置项
+"""
+add(name, x_axis, y_axis, data,
+   grid3d_opacity=1,
+   grid3d_shading='color', **kwargs) 
+
+from pyecharts import Bar3D
+
+bar3d = Bar3D("3D 柱状图示例", width=1200, height=600
+             ...
+             ...
+bar3d.add(
+   "",
+   x_axis,
+   y_axis,
+   [[d[1], d[0], d[2]] for d in data],
+   is_visualmap=True,
+   visual_range=[0, 20],
+   visual_range_color=range_color,
+   grid3d_width=200,
+   grid3d_depth=80,
+)
+bar3d.render('html/3D_Bar.html')
+```
 
    1. WordCloud
 
-   ```python
-   """
-   name	str图例名称
-   attr	list属性名称
-   value	list属性所对应的值
-   """
-   add(name, attr, value,
-       shape="circle",
-       word_gap=20,
-       word_size_range=None,
-       rotate_step=45)
-   
-   from pyecharts import WordCloud
-   words = ['Python', '文本分析', '编程']
-   freqs = [100,200,50]
-   wordcloud = WordCloud(width=1300, height=620)
-   wordcloud.add("", words, freqs, word_size_range=[20, 100])
-   wordcloud.render('html/wordcloud.html')
-   ```
+```python
+"""
+name	str图例名称
+attr	list属性名称
+value	list属性所对应的值
+"""
+add(name, attr, value,
+   shape="circle",
+   word_gap=20,
+   word_size_range=None,
+   rotate_step=45)
+
+from pyecharts import WordCloud
+words = ['Python', '文本分析', '编程']
+freqs = [100,200,50]
+wordcloud = WordCloud(width=1300, height=620)
+wordcloud.add("", words, freqs, word_size_range=[20, 100])
+wordcloud.render('html/wordcloud.html')
+```
 
    
 
@@ -161,14 +163,14 @@ categories: [programming, machine learning]
 
       1. 列向量和行向量组成的数据结构
 
-      2. ```python
-         import numpy as np
-         import pandas as pd
-         
-         df = pd.DataFrame(np.arange(40).reshape(8,5),
-                          index=['one','two','three','four','five','six','seven','eight'],
-                          columns=['a','b','c','d','e'])
-         ```
+      2. 
+```python
+ import numpy as np
+ import pandas as pd
+ df = pd.DataFrame(np.arange(40).reshape(8,5),
+                  index=['one','two','three','four','five','six','seven','eight'],
+                  columns=['a','b','c','d','e'])
+ ```
 
       3. `df.drop('one', axis='rows', inplace=False)`
 
@@ -190,10 +192,10 @@ categories: [programming, machine learning]
 
       12. 列方向进行**聚合运算**
 
-          ```python
-          df.agg({'colname1': ['mean', diyfunc],
-                 'colname2': ['mean', 'sum']})
-          ```
+```python
+df.agg({'colname1': ['mean', diyfunc],
+       'colname2': ['mean', 'sum']})
+```
 
           1. `df.agg('mean')`- 针对所有列的聚合操作
 
@@ -217,19 +219,21 @@ categories: [programming, machine learning]
 
           2. pd.to_datetime(data) 将data序列数据转换为datetime类型Series
 
-             1. ```python
-                datatime = pd.to_datetime(data)
-                datatime.dt.year
-                datatime.dt.month.value_counts()
-                ```
+             1. 
+```python
+datatime = pd.to_datetime(data)
+datatime.dt.year
+datatime.dt.month.value_counts()
+```
 
           3. 指定日期为索引
 
-             1. ```python
-                tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
-                tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
-                tm_series['2017']
-                ```
+             1. 
+```python
+tm_rng = pd.date_range('2017-12-31 12:00:00',periods=20, freq='5H')
+tm_series = pd.Series(np.random.randn(len(tm_rng)), index=tm_rng)
+tm_series['2017']
+```
 
           4. resample
 
